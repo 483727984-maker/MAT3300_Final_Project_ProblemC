@@ -1,0 +1,50 @@
+{
+  "n_songs_full_music_data": 98340,
+  "n_artists_data_by_artist": 5854,
+  "n_artists_with_genre_for_model_ii": 5599,
+  "n_artists_missing_genre": 252,
+  "n_influence_edges": 42770,
+  "n_influence_nodes": 5603,
+  "n_years_data_by_year": 100,
+  "year_min": 1921,
+  "year_max": 2020,
+  "feature_cols": [
+    "danceability",
+    "energy",
+    "valence",
+    "tempo",
+    "loudness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "speechiness",
+    "duration_ms",
+    "popularity"
+  ],
+  "missing_feature_counts": {
+    "danceability": 0,
+    "energy": 0,
+    "valence": 0,
+    "tempo": 0,
+    "loudness": 0,
+    "acousticness": 0,
+    "instrumentalness": 0,
+    "liveness": 0,
+    "speechiness": 0,
+    "duration_ms": 0,
+    "popularity": 0
+  },
+  "genre_counts_top10": {
+    "Pop/Rock": 2807,
+    "R&B;": 677,
+    "Jazz": 406,
+    "Country": 403,
+    "Latin": 229,
+    "Electronic": 208,
+    "Vocal": 162,
+    "Reggae": 141,
+    "Blues": 101,
+    "Folk": 95
+  },
+  "n_genres_used": 19
+}

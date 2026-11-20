@@ -1,0 +1,1 @@
+window.__newSection += "verify is $\\bar{d}_{\\mathrm{within}}<\\bar{d}_{\\mathrm{between}}$.\n  \\item Similarity is not influence: a small $d_{ij}$ does not imply a declared influence edge (examined later when validating influencers against followers).\n\\end{itemize}\n\n\n"; window.__newSection.length

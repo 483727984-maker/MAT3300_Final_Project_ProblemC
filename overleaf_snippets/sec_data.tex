@@ -1,0 +1,23 @@
+\section{Data Preprocessing and Exploration}\label{sec:data}
+
+We use only the four official files in \texttt{ProblemC\_Music\_data/}.
+No external data are introduced.
+
+\subsection{Files and roles}
+\begin{itemize}
+  \item \texttt{influence\_data.csv}: directed influencer$\to$follower edges, with \texttt{main\_genre} and \texttt{active\_start} (used later for networks; here mainly as the genre dictionary).
+  \item \texttt{data\_by\_artist.csv}: artist-level mean Spotify features (primary input to Model~II).
+  \item \texttt{full\_music\_data.csv}: song-level features ($\approx 98{,}340$ tracks; reserved for finer temporal analyses).
+  \item \texttt{data\_by\_year.csv}: yearly mean features from 1921--2020 (reserved for evolution plots).
+\end{itemize}
+
+\subsection{Cleaning choices for Model~II}
+\begin{enumerate}
+  \item Join \texttt{data\_by\_artist} to genre labels via \texttt{artist\_id}, where genres are taken from \texttt{influence\_data} (we do \emph{not} redefine Pop/Rock or other genres).
+  \item Drop artists with missing genre or genre \texttt{Unknown}.
+  \item Select $p=11$ numeric features:
+  danceability, energy, valence, tempo, loudness, acousticness, instrumentalness, liveness, speechiness, duration\_ms, popularity.
+  \item Apply column-wise $z$-score standardization before computing Euclidean distances (see Model~II).
+\end{enumerate}
+After cleaning we retain $n=5599$ artists with both features and a genre label, covering 19 genres (Pop/Rock is the largest class).
+These steps are reproduced by \texttt{code/preprocess\_data.py}, which writes \texttt{artists\_features\_with\_genre.csv} and a short summary JSON for auditability.

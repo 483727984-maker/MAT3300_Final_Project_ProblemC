@@ -1,0 +1,24 @@
+\section{Notation}\label{sec:notation}
+
+Table~\ref{tab:notation-model-ii} lists the symbols used in Model~II (music similarity).
+Network-related notation for Model~I will be added when that section is completed.
+
+\begin{table}[htbp]
+\centering
+\caption{Notation used in Model~II.}
+\label{tab:notation-model-ii}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$\mathbf{x}_i\in\mathbb{R}^{p}$ & Artist $i$'s Spotify feature vector \\
+$\tilde{\mathbf{x}}_i$ & $z$-score standardized feature vector \\
+$p$ & Number of audio features ($p=11$ in our baseline) \\
+$d_{ij}=\|\tilde{\mathbf{x}}_i-\tilde{\mathbf{x}}_j\|_2$ & Euclidean distance (dissimilarity) \\
+$\mathcal{G}(i)$ & Main genre label of artist $i$ \\
+$W$, $B$ & Sets of within-genre / between-genre artist pairs \\
+$\bar{d}_{\mathrm{within}}$, $\bar{d}_{\mathrm{between}}$ & Mean distances over $W$ and $B$ \\
+$r$ & Number of retained PCA components \\
+\bottomrule
+\end{tabular}
+\end{table}
