@@ -1,0 +1,55 @@
+% Standalone preview of Model I only (not part of the final report).
+% Renders report/model1.tex with the main preamble plus dummy targets for
+% labels defined elsewhere (assumptions, data section, Models II/III).
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref}
+
+\numberwithin{equation}{section}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small MAT3300 Final Project --- Model I preview}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% Dummy targets so cross-references to other sections resolve in preview.
+% These headings exist ONLY in this preview file, never in main.tex.
+\section*{--- Preview-only dummy targets (not in final report) ---}
+\addtocounter{section}{1}\setcounter{subsection}{0}
+\subsection{Cleaning of the Influence Data (dummy)}\label{subsec:data-cleaning}
+\addtocounter{section}{1}
+\section{Validation and Sensitivity Analysis (dummy)}\label{sec:validation}
+\addtocounter{section}{1}
+\section{Model III (dummy)}\label{sec:model-genre}
+
+\input{model1}
+\end{document}

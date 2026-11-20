@@ -1,0 +1,103 @@
+{
+  "summary": {
+    "artists": 384,
+    "edges": 1769,
+    "density": 0.01202812228024369,
+    "weak_components": 1,
+    "strong_components": 353,
+    "reciprocal_pairs": 7,
+    "jazz_to_pop_rock_edges": 409
+  },
+  "top": [
+    {
+      "rank": 1,
+      "artist": "Charlie Parker",
+      "out_degree_within_jazz": 78,
+      "katz_within_jazz": 17.24665837701727
+    },
+    {
+      "rank": 2,
+      "artist": "Lester Young",
+      "out_degree_within_jazz": 45,
+      "katz_within_jazz": 15.503292640516008
+    },
+    {
+      "rank": 3,
+      "artist": "Miles Davis",
+      "out_degree_within_jazz": 83,
+      "katz_within_jazz": 13.873542010481989
+    },
+    {
+      "rank": 4,
+      "artist": "Dizzy Gillespie",
+      "out_degree_within_jazz": 46,
+      "katz_within_jazz": 11.771706819196789
+    },
+    {
+      "rank": 5,
+      "artist": "Thelonious Monk",
+      "out_degree_within_jazz": 39,
+      "katz_within_jazz": 11.67831073489898
+    },
+    {
+      "rank": 6,
+      "artist": "John Coltrane",
+      "out_degree_within_jazz": 66,
+      "katz_within_jazz": 10.787234141148401
+    },
+    {
+      "rank": 7,
+      "artist": "Bud Powell",
+      "out_degree_within_jazz": 37,
+      "katz_within_jazz": 8.449664092998809
+    },
+    {
+      "rank": 8,
+      "artist": "Roy Eldridge",
+      "out_degree_within_jazz": 16,
+      "katz_within_jazz": 8.023609284979932
+    },
+    {
+      "rank": 9,
+      "artist": "Ben Webster",
+      "out_degree_within_jazz": 18,
+      "katz_within_jazz": 6.594799416654102
+    },
+    {
+      "rank": 10,
+      "artist": "Don Byas",
+      "out_degree_within_jazz": 15,
+      "katz_within_jazz": 6.414725421989028
+    },
+    {
+      "rank": 11,
+      "artist": "Erskine Hawkins",
+      "out_degree_within_jazz": 6,
+      "katz_within_jazz": 6.138646358684005
+    },
+    {
+      "rank": 12,
+      "artist": "Sonny Rollins",
+      "out_degree_within_jazz": 28,
+      "katz_within_jazz": 5.9106211381148395
+    },
+    {
+      "rank": 13,
+      "artist": "Ornette Coleman",
+      "out_degree_within_jazz": 29,
+      "katz_within_jazz": 5.766755275811485
+    },
+    {
+      "rank": 14,
+      "artist": "Horace Silver",
+      "out_degree_within_jazz": 27,
+      "katz_within_jazz": 5.761278366523935
+    },
+    {
+      "rank": 15,
+      "artist": "Sonny Stitt",
+      "out_degree_within_jazz": 15,
+      "katz_within_jazz": 5.4483894969026565
+    }
+  ]
+}

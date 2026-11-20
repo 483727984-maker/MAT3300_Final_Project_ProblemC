@@ -1,0 +1,25 @@
+{
+  "raw_records": 42770,
+  "unique_directed_edges": 42770,
+  "artists": 5603,
+  "weak_components": 3,
+  "strong_components": 4747,
+  "largest_weak_component": 5599,
+  "largest_strong_component": 778,
+  "out_degree_zero": 1829,
+  "in_degree_zero": 557,
+  "time_reversed_edges_retained": 733,
+  "time_reversed_share": 0.0171381809679682,
+  "katz_alpha": 0.1,
+  "spectral_radius": 3.6140492680855574,
+  "katz_alpha_upper_bound": 0.27669794344827026,
+  "katz_vs_outdegree_spearman": 0.9525386922774501,
+  "katz_vs_reverse_pagerank_spearman": 0.9701490576818089,
+  "top20_overlap_all_vs_filtered": 20,
+  "all_vs_filtered_spearman": 0.9863153751693752,
+  "start_decade_gap_counts": {
+    "influencer_earlier": 33560,
+    "same_decade": 8477,
+    "influencer_later": 733
+  }
+}

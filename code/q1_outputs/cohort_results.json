@@ -1,0 +1,110 @@
+[
+  {
+    "decade":1930,
+    "edges":193,
+    "artists":151,
+    "top5":[
+      "Cab Calloway",
+      "Billie Holiday",
+      "Lester Young",
+      "Roy Eldridge",
+      "The Mills Brothers"
+    ]
+  },
+  {
+    "decade":1940,
+    "edges":741,
+    "artists":371,
+    "top5":[
+      "Lester Young",
+      "Charlie Parker",
+      "Roy Acuff",
+      "Ella Fitzgerald",
+      "Billie Holiday"
+    ]
+  },
+  {
+    "decade":1950,
+    "edges":2860,
+    "artists":903,
+    "top5":[
+      "Hank Williams",
+      "Elvis Presley",
+      "Ray Charles",
+      "Nat King Cole",
+      "Roy Brown"
+    ]
+  },
+  {
+    "decade":1960,
+    "edges":6478,
+    "artists":1475,
+    "top5":[
+      "The Beatles",
+      "Bob Dylan",
+      "Chuck Berry",
+      "Elvis Presley",
+      "Little Richard"
+    ]
+  },
+  {
+    "decade":1970,
+    "edges":6781,
+    "artists":1878,
+    "top5":[
+      "The Beatles",
+      "The Rolling Stones",
+      "The Velvet Underground",
+      "David Bowie",
+      "The Who"
+    ]
+  },
+  {
+    "decade":1980,
+    "edges":8523,
+    "artists":2336,
+    "top5":[
+      "The Beatles",
+      "David Bowie",
+      "Black Sabbath",
+      "Led Zeppelin",
+      "Sex Pistols"
+    ]
+  },
+  {
+    "decade":1990,
+    "edges":10911,
+    "artists":2996,
+    "top5":[
+      "Nirvana",
+      "The Beatles",
+      "Neil Young",
+      "Bob Dylan",
+      "Black Sabbath"
+    ]
+  },
+  {
+    "decade":2000,
+    "edges":5472,
+    "artists":2393,
+    "top5":[
+      "The Beatles",
+      "Bob Dylan",
+      "David Bowie",
+      "The Smiths",
+      "Green Day"
+    ]
+  },
+  {
+    "decade":2010,
+    "edges":811,
+    "artists":690,
+    "top5":[
+      "Usher",
+      "Michael Jackson",
+      "Rihanna",
+      "Prince",
+      "Beyonc\u00e9"
+    ]
+  }
+]
