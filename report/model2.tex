@@ -1,0 +1,91 @@
+\section{Model II: Measures of Music Similarity}\label{sec:model-similarity}
+
+This section addresses the second requirement of Problem~C: developing a quantitative measure of musical similarity from audio features, and testing whether artists within the same genre are more similar than artists from different genres. We use the existing \texttt{main\_genre} labels in \texttt{influence\_data}; we do not redefine genres such as Pop/Rock.
+
+\subsection{Feature Representation}
+
+For each artist $i$, we form a feature vector $\mathbf{x}_i \in \mathbb{R}^{p}$ from \texttt{data\_by\_artist}, using the Spotify audio attributes
+\[
+\begin{aligned}
+\{\,&\text{danceability},\ \text{energy},\ \text{valence},\ \text{tempo},\ \text{loudness},\\
+&\text{acousticness},\ \text{instrumentalness},\ \text{liveness},\ \text{speechiness},\ \text{duration\_ms},\ \text{popularity}\,\}.
+\end{aligned}
+\]
+Genre labels are attached by joining on \texttt{artist\_id} with \texttt{influence\_data}. The within-/between-genre test keeps only artists that have a genre label (here $n=5599$ after dropping missing/Unknown labels).
+
+Because these coordinates have incompatible scales (e.g., tempo versus danceability in $[0,1]$), we apply column-wise $z$-score standardization before any distance computation:
+\[
+\tilde{x}_{ik} = \frac{x_{ik}-\mu_k}{\sigma_k},\qquad k=1,\dots,p.
+\]
+All distances below are computed in this standardized space.
+
+\subsection{Baseline Measure: Euclidean Distance}
+
+As the primary similarity model, we measure stylistic discrepancy by Euclidean distance. For artists $i$ and $j$,
+\[
+d_{ij} = \bigl\|\tilde{\mathbf{x}}_i - \tilde{\mathbf{x}}_j\bigr\|_2 = \sqrt{\sum_{k=1}^{p}(\tilde{x}_{ik}-\tilde{x}_{jk})^2}.
+\]
+Smaller $d_{ij}$ means greater musical similarity. When a bounded score is useful for visualization, we may use $s_{ij}=1/(1+d_{ij})$; the formal within-/between comparison is performed on distances.
+
+\paragraph{Why Euclidean distance.}
+After standardization, Euclidean distance has a clear geometric reading (``closer points sound more alike''), is easy to reproduce in code, and maps directly onto the within-versus-between question. We emphasize that this is a \emph{distance}, not a correlation coefficient.
+
+\subsection{Within-Genre versus Between-Genre Test}
+
+Let $\mathcal{G}(i)$ denote the main genre of artist $i$. Define the average within-genre and between-genre distances
+\[
+\bar{d}_{\mathrm{within}}
+  = \frac{1}{|W|}\sum_{(i,j)\in W} d_{ij},
+\qquad
+\bar{d}_{\mathrm{between}}
+  = \frac{1}{|B|}\sum_{(i,j)\in B} d_{ij},
+\]
+where $W$ collects same-genre pairs and $B$ collects cross-genre pairs (pairs are randomly subsampled for computational tractability; seed fixed for reproducibility).
+
+\textbf{Hypothesis.} If the feature geometry aligns with the provided genre taxonomy, we expect
+\[
+\bar{d}_{\mathrm{within}} < \bar{d}_{\mathrm{between}}.
+\]
+Empirically, under the standardized Euclidean baseline we obtain
+\[
+\bar{d}_{\mathrm{within}} \approx 3.73
+\quad < \quad
+\bar{d}_{\mathrm{between}} \approx 4.55.
+\]
+Thus the inequality holds globally. Large heterogeneous labels such as Pop/Rock may still show weaker within-genre cohesion than smaller, tighter genres.
+
+To visualize genre neighbourhoods, we also compute each genre's centroid in the standardized feature space and plot the pairwise Euclidean distances between centroids (Figure~\ref{fig:heatmap-baseline}). The diagonal is zero by construction; brighter cells indicate nearer genres (e.g., Latin--R\&B, Country--Latin), while Comedy/Spoken is far from most musical genres.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{heatmap_genre_distances_baseline.pdf}
+  \caption{Pairwise Euclidean distances between genre centroids in the $z$-score standardized feature space. Smaller values (brighter) indicate more similar average musical profiles. Code: \texttt{code/model\_ii\_heatmap.py}.}
+  \label{fig:heatmap-baseline}
+\end{figure}
+
+\subsection{Robustness Check: PCA then Euclidean Distance}
+
+Audio features are correlated (e.g., energy and loudness), so Euclidean distance in the full standardized space can overweight redundant directions. As a second specification we: (i)~standardize; (ii)~apply PCA retaining enough components to explain at least $80\%$ of variance (here $r=6$, explaining about $82.5\%$); (iii)~recompute Euclidean distances in the score space; (iv)~repeat the within-/between comparison and the centroid heatmap.
+
+Under PCA$\to$Euclidean we again find
+\[
+\bar{d}_{\mathrm{within}} \approx 3.28
+\quad < \quad
+\bar{d}_{\mathrm{between}} \approx 4.10,
+\]
+so the qualitative conclusion is unchanged (Figure~\ref{fig:heatmap-pca}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{heatmap_genre_distances_pca.pdf}
+  \caption{Genre-centroid Euclidean distances after PCA (components explaining $\ge 80\%$ variance). The within-genre proximity pattern remains consistent with the baseline. Code: \texttt{code/model\_ii\_heatmap.py}.}
+  \label{fig:heatmap-pca}
+\end{figure}
+
+\subsection{Interim Conclusions for Model II}
+\begin{itemize}
+  \item Musical similarity is operationalized by standardized Euclidean distance on artist-level Spotify features, with PCA$+$Euclidean as a robustness check.
+  \item Genres are taken from the dataset; we do not invent new genre definitions.
+  \item Both specifications satisfy $\bar{d}_{\mathrm{within}}<\bar{d}_{\mathrm{between}}$.
+  \item Similarity is not influence: a small $d_{ij}$ does not imply a declared influence edge (examined later when validating influencers against followers).
+\end{itemize}

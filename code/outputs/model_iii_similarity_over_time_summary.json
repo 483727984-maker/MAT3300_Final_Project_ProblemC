@@ -1,0 +1,130 @@
+{
+  "definition": "c_g(t): Katz-weighted mean of globally z-scored features for artists with active_start in decade t; genres need >= 5 artists.",
+  "min_artists_per_genre_decade": 5,
+  "decades": [
+    1930,
+    1940,
+    1950,
+    1960,
+    1970,
+    1980,
+    1990,
+    2000,
+    2010
+  ],
+  "mean_between_distance_by_decade": [
+    {
+      "decade": 1930,
+      "n_artists": 155,
+      "n_genres_used": 7,
+      "mean_between_distance": 2.239481996867513,
+      "mean_between_similarity": 0.308691328109547
+    },
+    {
+      "decade": 1940,
+      "n_artists": 245,
+      "n_genres_used": 10,
+      "mean_between_distance": 2.5037358758938115,
+      "mean_between_similarity": 0.2854096414287785
+    },
+    {
+      "decade": 1950,
+      "n_artists": 540,
+      "n_genres_used": 12,
+      "mean_between_distance": 3.164121180873198,
+      "mean_between_similarity": 0.24014670960903794
+    },
+    {
+      "decade": 1960,
+      "n_artists": 855,
+      "n_genres_used": 13,
+      "mean_between_distance": 3.143935107008813,
+      "mean_between_similarity": 0.24131652021013977
+    },
+    {
+      "decade": 1970,
+      "n_artists": 795,
+      "n_genres_used": 14,
+      "mean_between_distance": 3.020330595837889,
+      "mean_between_similarity": 0.24873576343081485
+    },
+    {
+      "decade": 1980,
+      "n_artists": 949,
+      "n_genres_used": 13,
+      "mean_between_distance": 3.2870146577006483,
+      "mean_between_similarity": 0.23326255677799632
+    },
+    {
+      "decade": 1990,
+      "n_artists": 1128,
+      "n_genres_used": 14,
+      "mean_between_distance": 3.5597332498356695,
+      "mean_between_similarity": 0.2193110748388712
+    },
+    {
+      "decade": 2000,
+      "n_artists": 728,
+      "n_genres_used": 11,
+      "mean_between_distance": 4.548879162496315,
+      "mean_between_similarity": 0.18021657540477465
+    },
+    {
+      "decade": 2010,
+      "n_artists": 204,
+      "n_genres_used": 4,
+      "mean_between_distance": 1.153336602460078,
+      "mean_between_similarity": 0.46439557979813784
+    }
+  ],
+  "core_decades_note": "Main interpretation: 1950–2000; 1930s/2010s are sparse.",
+  "pair_similarity_trends": [
+    {
+      "pair": "Blues — R&B;",
+      "first_decade": 1950,
+      "last_decade": 1970,
+      "similarity_first": 0.504745824992385,
+      "similarity_last": 0.3782450086363,
+      "delta_similarity": -0.12650081635608496
+    },
+    {
+      "pair": "Folk — Country",
+      "first_decade": 1950,
+      "last_decade": 1990,
+      "similarity_first": 0.339825351120086,
+      "similarity_last": 0.26808985100658594,
+      "delta_similarity": -0.07173550011350005
+    },
+    {
+      "pair": "Jazz — Pop/Rock",
+      "first_decade": 1950,
+      "last_decade": 2000,
+      "similarity_first": 0.2478784200745435,
+      "similarity_last": 0.23045179031773746,
+      "delta_similarity": -0.017426629756806034
+    },
+    {
+      "pair": "Blues — Country",
+      "first_decade": 1950,
+      "last_decade": 1970,
+      "similarity_first": 0.4445352042917258,
+      "similarity_last": 0.43351124120084544,
+      "delta_similarity": -0.011023963090880384
+    },
+    {
+      "pair": "Electronic — Pop/Rock",
+      "first_decade": 1970,
+      "last_decade": 2000,
+      "similarity_first": 0.2531643707551893,
+      "similarity_last": 0.43193587018441976,
+      "delta_similarity": 0.17877149942923043
+    }
+  ],
+  "largest_mean_self_drift_genres": {
+    "Comedy/Spoken": 3.135,
+    "International": 2.845,
+    "Stage & Screen": 1.983,
+    "Classical": 1.889,
+    "Religious": 1.846
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "n_artists": 5599,
+  "n_genres": 19,
+  "weight": "katz_out",
+  "mean_within_cohesion_katz": 2.9163836073889566,
+  "mean_between_centroid_distance_katz": 3.7857484003085817,
+  "within_lt_between_katz": true,
+  "mean_within_cohesion_equal": 3.0512827274281644,
+  "mean_between_centroid_distance_equal": 3.464678395264047,
+  "within_lt_between_equal": true,
+  "offdiag_distance_corr_katz_vs_equal": 0.727495312760471,
+  "closest_3_pairs_katz": [
+    {
+      "genre_a": "Blues",
+      "genre_b": "R&B;",
+      "distance": 0.7617330220601914,
+      "similarity": 0.567622896022343
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "Country",
+      "distance": 0.7787551778759749,
+      "similarity": 0.5621909144315789
+    },
+    {
+      "genre_a": "Latin",
+      "genre_b": "R&B;",
+      "distance": 0.8604422036221537,
+      "similarity": 0.5375066196913123
+    }
+  ],
+  "farthest_3_pairs_katz": [
+    {
+      "genre_a": "Avant-Garde",
+      "genre_b": "Comedy/Spoken",
+      "distance": 9.206914916215396,
+      "similarity": 0.09797279669798484
+    },
+    {
+      "genre_a": "Avant-Garde",
+      "genre_b": "Children's",
+      "distance": 8.695097543490805,
+      "similarity": 0.10314491375812823
+    },
+    {
+      "genre_a": "Avant-Garde",
+      "genre_b": "Country",
+      "distance": 8.26482339047041,
+      "similarity": 0.1079351389502554
+    }
+  ]
+}

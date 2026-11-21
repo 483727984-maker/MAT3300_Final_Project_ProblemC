@@ -1,0 +1,10 @@
+decade,n_artists,n_genres_used,genres_used,mean_between_distance,mean_between_similarity
+1930,155,7,Blues|Country|Folk|Jazz|Latin|Stage & Screen|Vocal,2.239481996867513,0.308691328109547
+1940,245,10,Blues|Classical|Country|Easy Listening|Folk|International|Jazz|Latin|R&B;|Vocal,2.5037358758938115,0.2854096414287785
+1950,540,12,Blues|Comedy/Spoken|Country|Easy Listening|Folk|International|Jazz|Latin|Pop/Rock|R&B;|Stage & Screen|Vocal,3.164121180873198,0.24014670960903794
+1960,855,13,Blues|Classical|Comedy/Spoken|Country|Folk|International|Jazz|Latin|Pop/Rock|R&B;|Reggae|Religious|Vocal,3.143935107008813,0.24131652021013977
+1970,795,14,Blues|Country|Electronic|Folk|International|Jazz|Latin|New Age|Pop/Rock|R&B;|Reggae|Religious|Stage & Screen|Vocal,3.020330595837889,0.24873576343081485
+1980,949,13,Comedy/Spoken|Country|Electronic|Folk|International|Jazz|Latin|New Age|Pop/Rock|R&B;|Reggae|Religious|Vocal,3.2870146577006483,0.23326255677799632
+1990,1128,14,Comedy/Spoken|Country|Electronic|Folk|International|Jazz|Latin|New Age|Pop/Rock|R&B;|Reggae|Religious|Stage & Screen|Vocal,3.5597332498356695,0.2193110748388712
+2000,728,11,Comedy/Spoken|Country|Electronic|Jazz|Latin|New Age|Pop/Rock|R&B;|Reggae|Religious|Stage & Screen,4.548879162496315,0.18021657540477465
+2010,204,4,Country|Electronic|Pop/Rock|R&B;,1.153336602460078,0.46439557979813784

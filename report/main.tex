@@ -196,6 +196,9 @@ Symbol & Meaning \\
 \(C_d\)     & cohort of followers whose active-start decade is \(d\) \\
 \(G_S\)     & genre-induced subnetwork over artists of genre \(S\) \\
 \(s_{ij}\)  & feature-based similarity between artists \(i\) and \(j\) (Model~II) \\
+\(\tilde{\mathbf{x}}_i\) & \(z\)-scored Spotify feature vector of artist \(i\) \\
+\(\mathbf{c}_g\), \(\mathbf{c}_g(t)\) & Katz-weighted genre centroid (static / by active-start decade) \\
+\(d_{gh}\), \(s_{gh}\) & Euclidean distance / similarity between genre centroids \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -252,14 +255,8 @@ degree in \cref{subsec:q1-global}, the cohort view of
 \cref{subsec:q1-cohorts}, and the genre-comparison design of Model~III.
 
 \input{model1}
-\section{Model II: Measures of Music Similarity}\label{sec:model-similarity}
-% TODO: feature normalization; similarity metric; within- vs between-genre test.
-
-\section{Model III: Genre Structure and Influence Validation}\label{sec:model-genre}
-% TODO (T3): genre x genre similarity matrix (Model II output) vs cross-genre
-%            edge density (Model I output); what defines a genre; are genres related.
-% TODO (T4): baseline-corrected excess similarity s* significance test;
-%            per-feature fixed-effects regression -> contagion ranking.
+\input{model2}
+\input{model3}
 
 \section{Model IV: Temporal Dynamics}\label{sec:model-temporal}
 % TODO (T5): revolution detection primarily from data\_by\_year time series

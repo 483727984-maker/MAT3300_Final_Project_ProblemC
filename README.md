@@ -2,64 +2,49 @@
 
 Team workspace for the music-influence modeling project.
 
-## Current progress (synced from local work)
+## Progress
 
-| Area | Status | Notes |
-|------|--------|--------|
-| Q1 Network / influence measures | Not started in code | Deferred; discuss later |
-| **Q2 Music similarity (Model II)** | **In progress / runnable** | Main focus so far |
-| Q3–Q7 | Conceptual only | Not coded yet |
-| Overleaf write-up | Partial | Model II section + notation/data snippets |
+| Area | Status | Location |
+|------|--------|----------|
+| **Q1** Directed influence network | Done (teammate) | `code/q1_*.py`, `code/q1_outputs/`, `report/model1.tex` |
+| **Q2** Music similarity | Done | `code/model_ii_*.py`, `report/model2.tex` |
+| **Q3** Genre similarity / distinction / sim-over-time | Done (similarity side) | `code/model_iii_*.py`, `report/model3.tex` |
+| Q3 genre **influence** over time | Placeholder | `report/model3.tex` §`subsec:q3-inf-time` |
+| Q3 “Are some related?” | Placeholder | `report/model3.tex` §`subsec:q3-related` |
+| Q4–Q7 / memo / summary | Not done | `report/main.tex` TODOs |
 
-### Model II (Q2) — what is implemented
+## Report (LaTeX)
 
-- **Baseline:** z-score standardize → Euclidean distance  
-- **Robustness:** z-score → PCA → Euclidean distance  
-- **Check:** within-genre mean distance vs between-genre mean distance  
-- **Extras:** genre-centroid distance heatmaps for the report  
-
-Code lives under `code/`:
-
-| File | Role |
-|------|------|
-| `code/preprocess_data.py` | Join artist features with genre labels |
-| `code/model_ii_similarity.py` | Similarity metrics + summary tables |
-| `code/model_ii_heatmap.py` | Genre distance heatmaps |
-| `code/requirements.txt` | Python deps |
-| `code/README.md` | How to run |
-| `code/outputs/` | Generated CSVs / figures |
-| `code/figures/` | Heatmap PDFs for Overleaf |
-
-LaTeX snippets (for Overleaf paste/sync): `overleaf_snippets/`  
-Overleaf project (external): https://www.overleaf.com/project/6afc1695ba902a83a9c02e24
-
-## Data (required)
-
-Use **only** the four ICM-provided files in `ProblemC_Music_data/`:
-
-- `influence_data.csv`
-- `full_music_data.csv`
-- `data_by_artist.csv`
-- `data_by_year.csv`
-
-References / problem PDFs are also in this repo for convenience.
-
-## Setup & run
+Compile from `report/`:
 
 ```bash
-python3 -m venv /tmp/mat3300_venv
-/tmp/mat3300_venv/bin/pip install -r code/requirements.txt
-
-/tmp/mat3300_venv/bin/python code/preprocess_data.py
-/tmp/mat3300_venv/bin/python code/model_ii_similarity.py
-
-export MPLBACKEND=Agg
-export MPLCONFIGDIR=code/.mplconfig
-mkdir -p "$MPLCONFIGDIR"
-/tmp/mat3300_venv/bin/python code/model_ii_heatmap.py
+cd report
+pdflatex main.tex   # run twice for ToC / refs
 ```
 
-## Collaborators
+Main inputs: `model1.tex`, `model2.tex`, `model3.tex`. Figures in `report/figures/`.
 
-Repo owner invites teammates via GitHub → **Settings → Collaborators → Add people**.  
-After accepting the invite: `git clone` this repo, work on a branch or coordinate file ownership, then `git pull` / `git push`.
+**Teammate hooks in Model III**
+- `\ref{subsec:q3-inf-time}` — genre influence over time (network side)
+- `\ref{subsec:q3-related}` — synthesize sonic relatedness with cross-genre influence
+
+## Code
+
+See `code/README.md`. Model III entry points:
+
+```bash
+export MPLBACKEND=Agg MPLCONFIGDIR=code/.mplconfig
+mkdir -p "$MPLCONFIGDIR"
+/tmp/mat3300_venv/bin/python code/model_iii_genre_similarity.py
+/tmp/mat3300_venv/bin/python code/model_iii_genre_distinction.py
+/tmp/mat3300_venv/bin/python code/model_iii_similarity_over_time.py
+```
+
+## Data
+
+Only the four ICM files under `ProblemC_Music_data/`.
+
+## Overleaf
+
+https://www.overleaf.com/project/6afc1695ba902a83a9c02e24  
+Snippets mirror: `overleaf_snippets/` (including `model3.tex`).

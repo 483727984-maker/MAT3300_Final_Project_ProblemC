@@ -1,0 +1,119 @@
+{
+  "definition": "Profiles read from Katz-weighted centroids c_g in global z-space (same as genre similarity).",
+  "n_genres": 19,
+  "n_features": 11,
+  "most_discriminating_features": [
+    "duration_ms",
+    "speechiness",
+    "instrumentalness",
+    "valence"
+  ],
+  "most_distinctive_genres_by_profile_norm": [
+    {
+      "genre": "Avant-Garde",
+      "profile_norm": 7.454090014105704,
+      "high_1_feature": "duration_ms",
+      "low_1_feature": "loudness"
+    },
+    {
+      "genre": "Comedy/Spoken",
+      "profile_norm": 5.994968790920654,
+      "high_1_feature": "speechiness",
+      "low_1_feature": "popularity"
+    },
+    {
+      "genre": "Classical",
+      "profile_norm": 4.7904836831062685,
+      "high_1_feature": "instrumentalness",
+      "low_1_feature": "loudness"
+    },
+    {
+      "genre": "New Age",
+      "profile_norm": 4.661576072908763,
+      "high_1_feature": "instrumentalness",
+      "low_1_feature": "loudness"
+    },
+    {
+      "genre": "Stage & Screen",
+      "profile_norm": 4.166210521569759,
+      "high_1_feature": "instrumentalness",
+      "low_1_feature": "loudness"
+    }
+  ],
+  "least_distinctive_genres_by_profile_norm": [
+    {
+      "genre": "R&B;",
+      "profile_norm": 1.4026628738129756,
+      "high_1_feature": "acousticness",
+      "low_1_feature": "popularity"
+    },
+    {
+      "genre": "Latin",
+      "profile_norm": 1.0664062215497887,
+      "high_1_feature": "valence",
+      "low_1_feature": "duration_ms"
+    },
+    {
+      "genre": "Pop/Rock",
+      "profile_norm": 0.7226515358765303,
+      "high_1_feature": "valence",
+      "low_1_feature": "duration_ms"
+    }
+  ],
+  "example_close_pair_gaps": [
+    {
+      "genre_a": "Blues",
+      "genre_b": "R&B;",
+      "pair_distance": 0.7617330220601914,
+      "rank_gap": 1,
+      "feature": "loudness",
+      "abs_delta_z": 0.46457124924231064,
+      "signed_a_minus_b": -0.46457124924231064
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "R&B;",
+      "pair_distance": 0.7617330220601914,
+      "rank_gap": 2,
+      "feature": "energy",
+      "abs_delta_z": 0.40114223235490043,
+      "signed_a_minus_b": -0.40114223235490043
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "R&B;",
+      "pair_distance": 0.7617330220601914,
+      "rank_gap": 3,
+      "feature": "acousticness",
+      "abs_delta_z": 0.29470491506455254,
+      "signed_a_minus_b": 0.29470491506455254
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "Country",
+      "pair_distance": 0.7787551778759749,
+      "rank_gap": 1,
+      "feature": "duration_ms",
+      "abs_delta_z": 0.5223143535160504,
+      "signed_a_minus_b": 0.5223143535160504
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "Country",
+      "pair_distance": 0.7787551778759749,
+      "rank_gap": 2,
+      "feature": "tempo",
+      "abs_delta_z": 0.36381459903513697,
+      "signed_a_minus_b": -0.36381459903513697
+    },
+    {
+      "genre_a": "Blues",
+      "genre_b": "Country",
+      "pair_distance": 0.7787551778759749,
+      "rank_gap": 3,
+      "feature": "speechiness",
+      "abs_delta_z": 0.2868393442997694,
+      "signed_a_minus_b": 0.2868393442997694
+    }
+  ]
+}

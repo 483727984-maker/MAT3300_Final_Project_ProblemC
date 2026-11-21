@@ -11,3 +11,10 @@ code/.mplconfig/
 *.log
 .AppleDouble
 .LSOverride
+# LaTeX intermediates (keep compiled PDFs tracked under report/)
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
