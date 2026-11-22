@@ -1,0 +1,59 @@
+{
+  "cK_permutation": {
+    "1950": {
+      "c_K_obs": 0.533,
+      "null_mean": 0.8555,
+      "null_sd": 0.0156,
+      "z": -20.613,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    },
+    "1960": {
+      "c_K_obs": 0.4828,
+      "null_mean": 0.6498,
+      "null_sd": 0.0171,
+      "z": -9.735,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    },
+    "1970": {
+      "c_K_obs": 0.1881,
+      "null_mean": 0.5274,
+      "null_sd": 0.0105,
+      "z": -32.223,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    },
+    "1980": {
+      "c_K_obs": 0.1465,
+      "null_mean": 0.3975,
+      "null_sd": 0.0056,
+      "z": -44.668,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    },
+    "1990": {
+      "c_K_obs": 0.1707,
+      "null_mean": 0.5183,
+      "null_sd": 0.0038,
+      "z": -90.836,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    },
+    "2000": {
+      "c_K_obs": 0.1772,
+      "null_mean": 0.4846,
+      "null_sd": 0.004,
+      "z": -77.468,
+      "p_lower": 0.0,
+      "p_upper": 1.0
+    }
+  },
+  "mantel": {
+    "mantel_r": -0.4097,
+    "spearman_rho": -0.3976,
+    "p_one_sided": 0.0008,
+    "perms": 5000,
+    "pairs": 171
+  }
+}
