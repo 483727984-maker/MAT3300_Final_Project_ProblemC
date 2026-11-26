@@ -67,7 +67,7 @@ for t in [1950, 1960, 1970, 1980, 1990, 2000]:
 
 # ---------------------------------------------------------------- (b) Mantel
 F = pd.read_csv("q3_outputs/genre_flow_matrix_F.csv", index_col=0)
-D = pd.read_csv("/tmp/mat3300_repo/code/outputs/genre_centroid_distances_katz.csv",
+D = pd.read_csv("outputs/genre_centroid_distances_katz.csv",
                 index_col=0)
 D.columns = [c.strip().replace("R&B;", "R&B") for c in D.columns]
 D.index = [i.strip().replace("R&B;", "R&B") for i in D.index]
