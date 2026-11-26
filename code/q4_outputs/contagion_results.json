@@ -1,0 +1,149 @@
+{
+  "edges_total": 42770,
+  "edges_used": 42697,
+  "edges_dropped_no_features": 18,
+  "edges_no_control": 55,
+  "k_controls": 10,
+  "edge_sim_mean": 0.28589800127370857,
+  "control_sim_mean": 0.2504998458061451,
+  "excess_mean": 0.03539815546756344,
+  "excess_ci95": [
+    0.03473696299010003,
+    0.03602498254676459
+  ],
+  "wilcoxon_p": 0.0,
+  "share_positive": 0.7014544347378036,
+  "distance_excess_mean": 0.5581319821978518,
+  "spearman_excess_katz": {
+    "rho": -0.032212502948799016,
+    "p": 2.7817694273845212e-11
+  },
+  "dose_response": {
+    "Q1": 0.03442012289826923,
+    "Q2": 0.04033929584893391,
+    "Q3": 0.038552727457705695,
+    "Q4": 0.03532545893038433,
+    "Q5": 0.02825636426661744
+  },
+  "decade_curve": {
+    "1930": {
+      "mean": 0.014703681055406271,
+      "n": 178
+    },
+    "1940": {
+      "mean": 0.024787492466406807,
+      "n": 737
+    },
+    "1950": {
+      "mean": 0.02539979707919131,
+      "n": 2858
+    },
+    "1960": {
+      "mean": 0.03230644748425907,
+      "n": 6478
+    },
+    "1970": {
+      "mean": 0.03576376838487107,
+      "n": 6769
+    },
+    "1980": {
+      "mean": 0.04113415309855433,
+      "n": 8523
+    },
+    "1990": {
+      "mean": 0.038188409260698324,
+      "n": 10884
+    },
+    "2000": {
+      "mean": 0.03411727800345769,
+      "n": 5472
+    },
+    "2010": {
+      "mean": 0.017082573036417255,
+      "n": 798
+    }
+  },
+  "per_feature": [
+    {
+      "feature": "danceability",
+      "excess_mean": 0.1727,
+      "excess_median": 0.1464
+    },
+    {
+      "feature": "energy",
+      "excess_mean": 0.1787,
+      "excess_median": 0.1542
+    },
+    {
+      "feature": "valence",
+      "excess_mean": 0.1647,
+      "excess_median": 0.1545
+    },
+    {
+      "feature": "tempo",
+      "excess_mean": 0.125,
+      "excess_median": 0.1102
+    },
+    {
+      "feature": "loudness",
+      "excess_mean": 0.0902,
+      "excess_median": 0.064
+    },
+    {
+      "feature": "acousticness",
+      "excess_mean": 0.1724,
+      "excess_median": 0.1688
+    },
+    {
+      "feature": "instrumentalness",
+      "excess_mean": 0.1208,
+      "excess_median": 0.0267
+    },
+    {
+      "feature": "liveness",
+      "excess_mean": 0.0705,
+      "excess_median": 0.0468
+    },
+    {
+      "feature": "speechiness",
+      "excess_mean": 0.0848,
+      "excess_median": 0.0339
+    },
+    {
+      "feature": "duration_ms",
+      "excess_mean": 0.0693,
+      "excess_median": 0.0439
+    },
+    {
+      "feature": "popularity",
+      "excess_mean": 0.062,
+      "excess_median": 0.0491
+    }
+  ],
+  "beta_edge": {
+    "danceability": 0.27187467690798794,
+    "energy": -0.02561760663443083,
+    "valence": 0.11916767635829803,
+    "tempo": -0.05439461676398667,
+    "loudness": -0.00014392727548929643,
+    "acousticness": -4.240536578352347e-06,
+    "instrumentalness": -0.044964625465883076,
+    "liveness": -0.013779591180441477,
+    "speechiness": 0.02313308083703006,
+    "duration_ms": -0.013720780233160918,
+    "popularity": 0.03634694872010386
+  },
+  "beta_ctrl": {
+    "danceability": 0.0004158709495131508,
+    "energy": -0.0017041996607024654,
+    "valence": -0.004436261696645037,
+    "tempo": -0.004060790928369989,
+    "loudness": 0.003005221712246794,
+    "acousticness": -0.006552642078841671,
+    "instrumentalness": 0.0004850440481642775,
+    "liveness": -0.0014113565723529477,
+    "speechiness": 0.006496221873276128,
+    "duration_ms": 0.009288032241120013,
+    "popularity": -0.003282171987968497
+  }
+}
