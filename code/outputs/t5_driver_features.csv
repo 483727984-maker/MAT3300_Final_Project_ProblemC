@@ -1,0 +1,5 @@
+decade,label,feature,score
+1970,strong,liveness,0.945450250504002
+1970,strong,duration_ms,0.2159010386073181
+1970,strong,tempo,0.1686790065617619
+1970,strong,danceability,0.093437911603116

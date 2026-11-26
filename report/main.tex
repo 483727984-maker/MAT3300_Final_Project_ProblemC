@@ -199,6 +199,10 @@ Symbol & Meaning \\
 \(\tilde{\mathbf{x}}_i\) & \(z\)-scored Spotify feature vector of artist \(i\) \\
 \(\mathbf{c}_g\), \(\mathbf{c}_g(t)\) & Katz-weighted genre centroid (static / by active-start decade) \\
 \(d_{gh}\), \(s_{gh}\) & Euclidean distance / similarity between genre centroids \\
+\(F(t),\,P,\,Q\) & genre flow / export / source profiles (Model~III; follower-start decade \(t\)) \\
+\(c_{\mathrm{cross}}(t),\,c_K(t)\) & cross-genre edge share; Katz-weighted cross-genre share \\
+\(\mathbf{x}(t),\,E(t)\) & yearly \(z\)-feature state; sonic leap \(\|\mathbf{x}(t)-\mathbf{x}(t-1)\|_2\) \\
+\(N(t)\) & network restructuring score from \(\Delta c_{\mathrm{cross}}\), \(\Delta c_K\), Katz-mass turnover \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -257,12 +261,7 @@ degree in \cref{subsec:q1-global}, the cohort view of
 \input{model1}
 \input{model2}
 \input{model3}
-
-\section{Model IV: Temporal Dynamics}\label{sec:model-temporal}
-% TODO (T5): revolution detection primarily from data\_by\_year time series
-%            (composition-corrected breakpoints); revolutionaries named via network.
-% TODO (T6): Jazz case study across decades (within-Jazz Katz turnover; reuse fig4).
-% TODO (T7): pre/post-1995 era slicing; internet effect on network + features.
+\input{model4}
 
 \section{Validation and Sensitivity Analysis}\label{sec:validation}
 % TODO: validation checks; sensitivity table over key parameters; limitations.
@@ -295,7 +294,18 @@ degree in \cref{subsec:q1-global}, the cohort view of
 \begin{thebibliography}{99}
 \bibitem{allmusic} AllMusic. \emph{Music data scraped from AllMusic.com}, 2021.
 \bibitem{spotify} Spotify. \emph{Spotify Web API audio features}, 2021.
-% ... add your actual sources here.
+\bibitem{mauch2015evolution}
+  M.~Mauch, R.~M.~MacCallum, M.~Levy and A.~M.~Leroi.
+  The evolution of popular music: USA 1960--2010.
+  \emph{Royal Society Open Science}, 2(5):150081, 2015.
+\bibitem{savage2019cultural}
+  P.~E.~Savage.
+  Cultural evolution of music.
+  \emph{Humanities and Social Sciences Communications}, 5:16, 2019.
+\bibitem{katz1953}
+  L.~Katz.
+  A new status index derived from sociometric analysis.
+  \emph{Psychometrika}, 18(1):39--43, 1953.
 \end{thebibliography}
 
 %------------------------------------------------------------------------------

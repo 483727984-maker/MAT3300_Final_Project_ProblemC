@@ -2,6 +2,13 @@
 
 Reproducible scripts for the MAT3300 Problem C report. Prefer running from the repo root.
 
+Task 5 (dual-channel revolutions):
+```bash
+export MPLBACKEND=Agg MPLCONFIGDIR=code/.mplconfig
+/opt/anaconda3/bin/python code/model_iv_revolutions.py
+```
+Writes `code/outputs/t5_*.csv|json` and `code/figures/fig_t5_*.pdf` (copied to `report/figures/`).
+
 ## Setup (once)
 
 ```bash

@@ -1,0 +1,262 @@
+{
+  "definition": {
+    "evolution": "gradual drift of yearly z-feature state x(t) and slow change in c_cross, c_K",
+    "revolution": "anomalous sonic leap E(t) relative to baseline; strong if enclosing decade also has elevated network score N(t)",
+    "citations": [
+      "Mauch et al. 2015 Royal Society Open Science (punctuated change / Foote novelty)",
+      "Savage 2019 Humanities & Social Sciences Communications (cultural evolution as variant-frequency change)"
+    ]
+  },
+  "params": {
+    "year_window": [
+      1930,
+      2010
+    ],
+    "features": [
+      "danceability",
+      "energy",
+      "valence",
+      "tempo",
+      "loudness",
+      "acousticness",
+      "instrumentalness",
+      "liveness",
+      "speechiness",
+      "duration_ms",
+      "popularity"
+    ],
+    "E_mean": 1.6106610785597901,
+    "E_sd": 1.3224629006080526,
+    "sonic_z": 2.0,
+    "roll_win": 12,
+    "sonic_trust_year": 1948,
+    "N_mean": 0.12089534016957101,
+    "N_sd": 0.07620986243275749,
+    "network_z": 0.75
+  },
+  "sonic_anomaly_years": [
+    1976
+  ],
+  "decade_labels": [
+    {
+      "decade": 1930,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 5.1966143935964455,
+      "max_z_E": 0.06024312830453661,
+      "c_cross": 0.2953367875647669,
+      "c_K": 0.3460689697429033,
+      "N": 0.0,
+      "z_N": -1.5863477023887955
+    },
+    {
+      "decade": 1940,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 6.84048869538303,
+      "max_z_E": 3.265881884856454,
+      "c_cross": 0.233468286099865,
+      "c_K": 0.4291530612221381,
+      "N": 0.15753005806914494,
+      "z_N": 0.48070835886756735
+    },
+    {
+      "decade": 1950,
+      "label": "weak",
+      "sonic_anomaly": false,
+      "network_anomaly": true,
+      "max_E": 3.0076603155138133,
+      "max_z_E": 0.09959104052789232,
+      "c_cross": 0.3597902097902098,
+      "c_K": 0.533048064346341,
+      "N": 0.2103667284390513,
+      "z_N": 1.1740132499048124
+    },
+    {
+      "decade": 1960,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 1.9065048548841625,
+      "max_z_E": 0.8232796737002087,
+      "c_cross": 0.3743439333127508,
+      "c_K": 0.4828357465451406,
+      "N": 0.13402715878607768,
+      "z_N": 0.17231127569733265
+    },
+    {
+      "decade": 1970,
+      "label": "strong",
+      "sonic_anomaly": true,
+      "network_anomaly": true,
+      "max_E": 2.2494073244656287,
+      "max_z_E": 2.463896399039494,
+      "c_cross": 0.2417047633092464,
+      "c_K": 0.1880594786822994,
+      "N": 0.23083069392322128,
+      "z_N": 1.442534473154966
+    },
+    {
+      "decade": 1980,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 1.842712392893331,
+      "max_z_E": 1.4428354017122311,
+      "c_cross": 0.1818608471195588,
+      "c_K": 0.1465222165984786,
+      "N": 0.06464576640734836,
+      "z_N": -0.7380878532860958
+    },
+    {
+      "decade": 1990,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 1.1266002233574475,
+      "max_z_E": 1.0406716836179501,
+      "c_cross": 0.1800934836403629,
+      "c_K": 0.1706519363795201,
+      "N": 0.04905220857797576,
+      "z_N": -0.9427012370608181
+    },
+    {
+      "decade": 2000,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 0.9595481951473335,
+      "max_z_E": 0.9803245897088785,
+      "c_cross": 0.1807383040935672,
+      "c_K": 0.1772304418073189,
+      "N": 0.019157719453162247,
+      "z_N": -1.3349665970880773
+    },
+    {
+      "decade": 2010,
+      "label": "evolution",
+      "sonic_anomaly": false,
+      "network_anomaly": false,
+      "max_E": 0.56224471187149,
+      "max_z_E": -0.7872280757145612,
+      "c_cross": 0.2342786683107275,
+      "c_K": 0.2322263968604478,
+      "N": 0.10155238770058655,
+      "z_N": -0.253811670189687
+    }
+  ],
+  "strong_decades": [
+    1970
+  ],
+  "weak_decades": [
+    1950
+  ],
+  "top_revolutionaries_by_decade": {
+    "1950": [
+      {
+        "rank": 1,
+        "name": "Chuck Berry",
+        "genre": "Pop/Rock",
+        "start": 1950,
+        "K_i": 713.3736472785506,
+        "followers_in_window": 107,
+        "alignment": 0.8516229162777359,
+        "score": 0.9921153846153846
+      },
+      {
+        "rank": 2,
+        "name": "Little Richard",
+        "genre": "Pop/Rock",
+        "start": 1950,
+        "K_i": 537.57576698069,
+        "followers_in_window": 71,
+        "alignment": 0.8370888090229435,
+        "score": 0.9748076923076923
+      },
+      {
+        "rank": 3,
+        "name": "James Brown",
+        "genre": "R&B",
+        "start": 1950,
+        "K_i": 361.4339154044286,
+        "followers_in_window": 86,
+        "alignment": 0.7920397861123956,
+        "score": 0.9507692307692307
+      },
+      {
+        "rank": 4,
+        "name": "Howlin' Wolf",
+        "genre": "Blues",
+        "start": 1930,
+        "K_i": 435.8754553515911,
+        "followers_in_window": 71,
+        "alignment": 0.7564006873367188,
+        "score": 0.9398076923076922
+      },
+      {
+        "rank": 5,
+        "name": "Jackie Wilson",
+        "genre": "R&B",
+        "start": 1950,
+        "K_i": 225.6673082663117,
+        "followers_in_window": 47,
+        "alignment": 0.8236581210566443,
+        "score": 0.9221153846153847
+      }
+    ],
+    "1970": [
+      {
+        "rank": 1,
+        "name": "Bob Dylan",
+        "genre": "Pop/Rock",
+        "start": 1960,
+        "K_i": 545.2554806060682,
+        "followers_in_window": 131,
+        "alignment": 0.9642317606692681,
+        "score": 0.9858520900321543
+      },
+      {
+        "rank": 2,
+        "name": "The Rolling Stones",
+        "genre": "Pop/Rock",
+        "start": 1960,
+        "K_i": 420.6479971631138,
+        "followers_in_window": 136,
+        "alignment": 0.8276195610333354,
+        "score": 0.9450160771704181
+      },
+      {
+        "rank": 3,
+        "name": "Jimi Hendrix",
+        "genre": "Pop/Rock",
+        "start": 1960,
+        "K_i": 240.4700209910048,
+        "followers_in_window": 95,
+        "alignment": 0.7775380891397549,
+        "score": 0.919935691318328
+      },
+      {
+        "rank": 4,
+        "name": "MC5",
+        "genre": "Pop/Rock",
+        "start": 1960,
+        "K_i": 92.87848213729262,
+        "followers_in_window": 43,
+        "alignment": 0.942601035479892,
+        "score": 0.9059485530546624
+      },
+      {
+        "rank": 5,
+        "name": "The Doors",
+        "genre": "Pop/Rock",
+        "start": 1960,
+        "K_i": 94.84619645441308,
+        "followers_in_window": 49,
+        "alignment": 0.8975833349107569,
+        "score": 0.9045016077170418
+      }
+    ]
+  }
+}
