@@ -20,7 +20,7 @@ and the 733 time-order-reversed edges identified in the data audit are
 retained in the primary network (Assumption~A3), with their effect
 quantified separately in \cref{subsec:q1-robustness}.
 
-\subsection{Influence Measures}\label{subsec:q1-measures}
+\subsection{Influence Measures and Network Topology}\label{subsec:q1-measures}
 
 We report three measures with deliberately distinct interpretations rather
 than a single weighted composite: each answers a different question, and their
@@ -68,22 +68,20 @@ this reversal explicitly because it is the difference between
 ``being shaped by important artists'' and ``shaping important artists''.
 
 We do \emph{not} merge the three measures into an ad hoc weighted index:
-they encode different semantics (direct popularity, attenuated multi-step
-reach, recursive endorsement), and any fixed weighting would be arbitrary.
-Instead we compare their rankings; \cref{subsec:q1-robustness} shows that the
-conclusions are robust to this choice.
-
-\subsection{Whole-Network Topology}\label{subsec:q1-topology}
+they encode different semantics, and any fixed weighting would be
+arbitrary; instead we compare their rankings, and
+\cref{subsec:q1-robustness} shows the conclusions are robust to this
+choice.
 
 \Cref{tab:q1-topology} summarises the network. The graph is almost fully
-connected in the weak sense (99.9\% of artists lie in one weak component), but
-fragmented into many strong components: influence, as reported, flows through a
-giant downstream cascade rather than forming tightly reciprocated clusters.
-The 1{,}829 artists with zero out-degree have no recorded followers in this
-dataset; this is a statement about the data, not proof of absence of influence.
-The decade gap between influencer and follower is positive (influencer earlier)
-for 33{,}560 edges and zero for 8{,}477 edges, consistent with the expected
-one-to-two-generation transmission lag.
+connected in the weak sense (99.9\% of artists lie in one weak component),
+but fragmented into many strong components: influence, as reported, flows
+through a giant downstream cascade rather than forming tightly reciprocated
+clusters. The 1{,}829 artists with zero out-degree have no recorded
+followers in this dataset---a statement about the data, not proof of
+absence of influence; the decade lag between influencer and follower is
+consistent with the one-to-two-generation transmission delay expected of
+influence.
 
 \begin{table}[htbp]
 \centering
@@ -160,18 +158,15 @@ diagonal owe their position to indirect, multi-step transmission
 \end{figure}
 
 The reverse-PageRank column of \cref{tab:q1-top10} reveals a systematic
-difference in character. Its global top ranks are occupied by early-era
+difference in character: its global top ranks are occupied by early-era
 artists (Cab Calloway, Billie Holiday and Lester Young lead the overall
-ranking), because under recursive endorsement an artist active in the 1930s
-has had nine decades to accumulate credit, whereas an artist named only by
-post-1960 followers cannot. This is the well-known age bias of centrality
-measures on growing networks: reverse PageRank measures \emph{accumulated
-recognition}, while outgoing Katz measures \emph{transmission capacity}
-independent of how long an artist has had to collect followers. We report
-both and treat the divergence as informative rather than averaging it away;
-an era-normalised variant (rescaling PageRank within cohorts of
-similarly aged artists) is discussed as a refinement in
-\cref{sec:validation}.
+ranking), because under recursive endorsement an artist active in the
+1930s has had nine decades to accumulate credit. This is the well-known
+age bias of centrality measures on growing networks: reverse PageRank
+measures \emph{accumulated recognition}, while outgoing Katz measures
+\emph{transmission capacity}. We report both and treat the divergence as
+informative rather than averaging it away; an era-normalised variant is
+discussed as a refinement in \cref{sec:validation}.
 
 \subsection{A Dynamic View: Follower-Start-Decade Cohorts}\label{subsec:q1-cohorts}
 
@@ -184,20 +179,16 @@ active-start decade and recompute the network and Katz scores within each
 
 \Cref{fig:q1-cohorts} tracks the 15 artists who most often rank in a cohort's
 top 10, and \cref{tab:q1-cohorts} lists cohort sizes and leading names. Three
-patterns emerge. First, \emph{generational succession}: the 1930s--1940s
-cohorts are dominated by swing-era figures (Cab Calloway, Billie Holiday,
-Lester Young), the 1950s cohort pivots to country and early rock (Hank
-Williams, Elvis Presley, Ray Charles), and from the 1960s onward rock artists
-take over. Second, \emph{cross-generational persistence}: The Beatles rank
-first in the 1960s, 1970s and 1980s cohorts, second in the 1990s and first
-again in the 2000s---five consecutive decades inside the top two---while Bob
-Dylan never leaves the top 10 from the 1960s cohort onward. Third,
-\emph{cohort-specific arrivals}: Nirvana appears only from the 1990s cohort
-(rank~1), The Velvet Underground enters at the 1970s cohort, and David Bowie
-peaks in the 1970s--1980s cohorts---patterns consistent with each cohort
-reporting the canon available to it. The 2010s cohort is much smaller
-(811 edges, 690 artists) and is dominated by contemporary artists; its
-top-10 membership should be read with this sample-size caveat.
+patterns emerge. First, \emph{generational succession}: swing-era figures
+dominate the 1930s--1940s cohorts, the 1950s cohort pivots to country and
+early rock, and rock artists take over from the 1960s onward. Second,
+\emph{cross-generational persistence}: The Beatles rank inside the top two
+of five consecutive cohorts (1960s--2000s), and Bob Dylan never leaves the
+top 10 from the 1960s cohort onward. Third, \emph{cohort-specific
+arrivals}: Nirvana appears only from the 1990s cohort (rank~1) and David
+Bowie peaks in the 1970s--1980s---each cohort reports the canon available
+to it. The 2010s cohort is much smaller (811 edges) and its top-10
+membership should be read with this sample-size caveat.
 
 \begin{figure}[htbp]
 \centering
@@ -235,34 +226,22 @@ Cohort & Edges & Artists & Top-3 influencers within cohort \\
 
 \subsection{A Genre-Induced Subnetwork: Jazz}\label{subsec:q1-jazz}
 
-Task~1 also asks for a description of a subnetwork. We induce one by keeping
-only edges whose \emph{both} endpoints carry the genre label Jazz, yielding
-\(G_{\text{Jazz}}\) with 384 artists and 1{,}769 edges (density 0.012).
-Jazz is a convenient choice of slice: it is large enough to be structurally
-informative yet far smaller than the dominant Pop/Rock component, its
-influence records span nine decades, and its internal history (swing $\to$
-bebop $\to$ cool/hard bop $\to$ fusion) is well documented, which gives us
-an external check on the ordering the model produces. The subnetwork is
-weakly connected as a whole but fragmented into 353 strong components, and
-it exports influence heavily: 409 further edges run from Jazz artists to
-Pop/Rock artists, consistent with jazz idioms feeding directly into early
-rock and roll.
-
-\Cref{fig:q1-jazz} shows the subnetwork results. The left panel visualises a
-selected ego view: the eight highest-scoring Jazz hubs on the inner circle,
-with up to three of their highest-scoring direct followers radiating outward
-(node colour encodes active-start decade, node size the within-genre Katz
-score). The right panel ranks all Jazz artists by within-genre outgoing
-Katz. The leader is Charlie Parker (78 direct Jazz followers), ahead of
-Lester Young (45) and Miles Davis (83): again the depth-over-breadth
-mechanism of \cref{subsec:q1-global} recurs inside a single genre, with
-Davis's larger direct following not translating into a higher multi-step
-score. The generational reading of the colour coding---swing-era hubs
-(dark) feeding bebop-era hubs (teal), who feed later artists (bright)---
-mirrors the documented stylistic succession, supporting the interpretability
-of the measure. This same subnetwork is revisited in
-\cref{sec:model-genre} as the case study for Task~6, where its evolution
-over time is analysed in more detail.
+Task~1 also asks for a description of a subnetwork; we induce one by
+keeping only edges whose \emph{both} endpoints are Jazz, yielding
+$G_{\text{Jazz}}$ with 384 artists and 1{,}769 edges (density 0.012),
+fragmented into 353 strong components. Jazz is a convenient slice---large
+enough to be structurally informative, spanning nine decades, with a
+well-documented internal history (swing $\to$ bebop $\to$ cool/hard bop
+$\to$ fusion) that gives an external check on the model's ordering. The
+leader by within-genre Katz is Charlie Parker (78 direct Jazz followers),
+ahead of Lester Young and Miles Davis (83): the depth-over-breadth
+mechanism of \cref{subsec:q1-global} recurs inside a single genre, and the
+generational reading of \cref{fig:q1-jazz} (swing-era hubs feeding bebop-era
+hubs, who feed later artists) mirrors the documented stylistic succession.
+The subnetwork also \emph{exports} influence heavily: 409 further edges run
+from Jazz artists to Pop/Rock artists, a cross-validation anchor we use in
+\cref{subsec:q3-inf-time}. This same subnetwork is revisited in
+\cref{sec:model-temporal} as the case study for Task~6.
 
 \begin{figure}[htbp]
 \centering
@@ -310,17 +289,12 @@ removing the 733 time-order-reversed edges; the dashed line marks equality.}
 \label{fig:q1-sensitivity}
 \end{figure}
 
-Finally, the three measures themselves corroborate one another in bulk
-(Spearman \(\rho=0.953\) between Katz and out-degree, \(\rho=0.970\) between
-Katz and reverse PageRank, \(\rho=0.954\) between out-degree and reverse
-PageRank) while disagreeing in exactly the ways their semantics predict:
-the top-20 sets of any two measures overlap in only 4--8 of 20 names. High
-bulk correlation with low top-rank overlap is precisely the signature of a
-stable shared backbone topped by artists specialised for different roles
-(direct popularity, transmission capacity, accumulated recognition), which
-supports reporting the measures separately instead of collapsing them into
-one index. The genre-induced Jazz subnetwork of \cref{subsec:q1-jazz}
-illustrates how the same toolkit slices naturally by genre; across all
-measures we emphasise that edges are
-\emph{reported} relationships, not established causal influence.
+Finally, the three measures corroborate one another in bulk (pairwise
+Spearman $\rho$ between 0.95 and 0.97) while their top-20 sets overlap in
+only 4--8 of 20 names---high bulk agreement with low top-rank overlap is
+precisely the signature of a stable shared backbone topped by artists
+specialised for different roles, which supports reporting the measures
+separately instead of collapsing them into one index. Across all measures
+we emphasise that edges are \emph{reported} relationships, not established
+causal influence.
 
