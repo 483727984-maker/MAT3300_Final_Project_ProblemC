@@ -93,3 +93,20 @@ Key outputs:
 - `genre_pair_similarity_over_time.csv` / `genre_pair_similarity_trends.csv`
 - `genre_self_drift_over_time.csv`
 - figures: `genre_mean_between_distance_over_time.*`, `genre_pair_similarity_over_time.*`, `genre_self_drift_over_time.*`
+
+## Q6 — jazz influence process over time (Task 6)
+
+Uses all 42,770 influence edges (Assumption A3) and the Q1 Jazz subnetwork
+(384 artists, 1,769 edges). The script builds the release-year jazz centroid,
+the four sound indicators (originality, anticipation, transmission, reach),
+and the within-decade permutation test.
+
+```bash
+python3 code/q6/q6_analysis.py
+python3 code/q6/generate_q6_pdf.py       # standalone 10-page companion (xelatex/tectonic)
+python3 code/q6/generate_t6_section.py   # rebuilds model4_t6.tex + t6_figures/
+```
+
+Outputs under `code/q6/`: `q6_results.json`, `q6_artists.csv`, `figures/`,
+and `Q6_Genre_Evolution.pdf/.tex`. The canonical section included by the joint
+report is `report/model4_t6.tex` with figures `report/figures/fig_t6_*.pdf`.

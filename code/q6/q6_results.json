@@ -1,0 +1,1904 @@
+{
+  "data": {
+    "raw_edges": 42770,
+    "network_edges": 42770,
+    "network_nodes": 5603,
+    "same_decade_edges": 8477,
+    "reversed_edges": 733,
+    "jazz_edges_all": 3073,
+    "jazz_jazz_edges": 1769,
+    "jazz_to_pop_rock_edges": 409,
+    "jazz_network_nodes": 384,
+    "jazz_artists": 406,
+    "jazz_artists_used": 285,
+    "jazz_songs": 8000,
+    "jazz_song_artists": 404,
+    "year_min": 1924,
+    "year_max": 2020,
+    "timeline_min": 1936,
+    "timeline_max": 2002,
+    "min_songs_year": 20,
+    "min_songs_artist": 3,
+    "features": [
+      "danceability",
+      "energy",
+      "valence",
+      "tempo",
+      "loudness",
+      "acousticness",
+      "instrumentalness",
+      "speechiness",
+      "duration_ms"
+    ],
+    "year_song_counts": {
+      "1924": 1,
+      "1925": 1,
+      "1926": 1,
+      "1927": 2,
+      "1928": 4,
+      "1930": 2,
+      "1932": 10,
+      "1934": 14,
+      "1935": 1,
+      "1936": 22,
+      "1937": 52,
+      "1938": 13,
+      "1939": 35,
+      "1940": 9,
+      "1941": 5,
+      "1942": 28,
+      "1944": 25,
+      "1945": 55,
+      "1946": 37,
+      "1947": 10,
+      "1948": 9,
+      "1949": 57,
+      "1950": 45,
+      "1951": 125,
+      "1952": 161,
+      "1953": 194,
+      "1954": 422,
+      "1955": 536,
+      "1956": 531,
+      "1957": 781,
+      "1958": 349,
+      "1959": 508,
+      "1960": 359,
+      "1961": 493,
+      "1962": 444,
+      "1963": 328,
+      "1964": 274,
+      "1965": 140,
+      "1966": 106,
+      "1967": 81,
+      "1968": 118,
+      "1969": 66,
+      "1970": 49,
+      "1971": 71,
+      "1972": 43,
+      "1973": 69,
+      "1974": 93,
+      "1975": 73,
+      "1976": 78,
+      "1977": 63,
+      "1978": 54,
+      "1979": 40,
+      "1980": 40,
+      "1981": 67,
+      "1982": 36,
+      "1983": 28,
+      "1984": 24,
+      "1985": 37,
+      "1986": 73,
+      "1987": 60,
+      "1988": 48,
+      "1989": 47,
+      "1990": 23,
+      "1991": 46,
+      "1992": 35,
+      "1993": 23,
+      "1994": 29,
+      "1995": 28,
+      "1996": 25,
+      "1997": 32,
+      "1998": 20,
+      "1999": 34,
+      "2000": 15,
+      "2001": 18,
+      "2002": 20,
+      "2003": 10,
+      "2004": 13,
+      "2005": 12,
+      "2006": 16,
+      "2007": 9,
+      "2008": 11,
+      "2009": 11,
+      "2010": 3,
+      "2011": 6,
+      "2012": 3,
+      "2013": 1,
+      "2014": 3,
+      "2015": 3,
+      "2018": 2,
+      "2019": 1,
+      "2020": 1
+    }
+  },
+  "timeline": {
+    "pca_explained": [
+      0.5927,
+      0.1681,
+      0.0935,
+      0.0527
+    ],
+    "pca_loadings_pc1": {
+      "danceability": 0.025,
+      "energy": -0.244,
+      "valence": 0.09,
+      "tempo": 0.119,
+      "loudness": 0.082,
+      "acousticness": 0.516,
+      "instrumentalness": 0.038,
+      "speechiness": 0.129,
+      "duration_ms": -0.792
+    },
+    "pca_loadings_pc2": {
+      "danceability": 0.025,
+      "energy": 0.477,
+      "valence": 0.419,
+      "tempo": 0.261,
+      "loudness": 0.394,
+      "acousticness": -0.084,
+      "instrumentalness": 0.579,
+      "speechiness": 0.175,
+      "duration_ms": -0.017
+    },
+    "trajectory": [
+      {
+        "year": 1936,
+        "pc1": 1.754,
+        "pc2": 1.178,
+        "songs": 22
+      },
+      {
+        "year": 1937,
+        "pc1": 1.702,
+        "pc2": 0.174,
+        "songs": 52
+      },
+      {
+        "year": 1938,
+        "pc1": 1.78,
+        "pc2": 0.014,
+        "songs": 13
+      },
+      {
+        "year": 1939,
+        "pc1": 1.567,
+        "pc2": -0.171,
+        "songs": 35
+      },
+      {
+        "year": 1940,
+        "pc1": 1.524,
+        "pc2": -0.372,
+        "songs": 9
+      },
+      {
+        "year": 1941,
+        "pc1": 1.499,
+        "pc2": -0.009,
+        "songs": 5
+      },
+      {
+        "year": 1942,
+        "pc1": 1.532,
+        "pc2": 0.335,
+        "songs": 28
+      },
+      {
+        "year": 1943,
+        "pc1": 1.528,
+        "pc2": 0.464,
+        "songs": 0
+      },
+      {
+        "year": 1944,
+        "pc1": 1.523,
+        "pc2": 0.594,
+        "songs": 25
+      },
+      {
+        "year": 1945,
+        "pc1": 1.509,
+        "pc2": 0.397,
+        "songs": 55
+      },
+      {
+        "year": 1946,
+        "pc1": 1.123,
+        "pc2": 0.708,
+        "songs": 37
+      },
+      {
+        "year": 1947,
+        "pc1": 0.738,
+        "pc2": 1.185,
+        "songs": 10
+      },
+      {
+        "year": 1948,
+        "pc1": 0.415,
+        "pc2": 1.023,
+        "songs": 9
+      },
+      {
+        "year": 1949,
+        "pc1": 0.798,
+        "pc2": 0.051,
+        "songs": 57
+      },
+      {
+        "year": 1950,
+        "pc1": 1.211,
+        "pc2": -0.281,
+        "songs": 45
+      },
+      {
+        "year": 1951,
+        "pc1": 1.575,
+        "pc2": -0.224,
+        "songs": 125
+      },
+      {
+        "year": 1952,
+        "pc1": 1.424,
+        "pc2": -0.031,
+        "songs": 161
+      },
+      {
+        "year": 1953,
+        "pc1": 1.133,
+        "pc2": -0.094,
+        "songs": 194
+      },
+      {
+        "year": 1954,
+        "pc1": 0.597,
+        "pc2": -0.129,
+        "songs": 422
+      },
+      {
+        "year": 1955,
+        "pc1": 0.371,
+        "pc2": -0.254,
+        "songs": 536
+      },
+      {
+        "year": 1956,
+        "pc1": 0.132,
+        "pc2": -0.439,
+        "songs": 531
+      },
+      {
+        "year": 1957,
+        "pc1": -0.058,
+        "pc2": -0.499,
+        "songs": 781
+      },
+      {
+        "year": 1958,
+        "pc1": -0.095,
+        "pc2": -0.705,
+        "songs": 349
+      },
+      {
+        "year": 1959,
+        "pc1": -0.025,
+        "pc2": -0.746,
+        "songs": 508
+      },
+      {
+        "year": 1960,
+        "pc1": -0.104,
+        "pc2": -0.878,
+        "songs": 359
+      },
+      {
+        "year": 1961,
+        "pc1": -0.22,
+        "pc2": -0.811,
+        "songs": 493
+      },
+      {
+        "year": 1962,
+        "pc1": -0.264,
+        "pc2": -0.756,
+        "songs": 444
+      },
+      {
+        "year": 1963,
+        "pc1": -0.018,
+        "pc2": -0.637,
+        "songs": 328
+      },
+      {
+        "year": 1964,
+        "pc1": -0.183,
+        "pc2": -0.657,
+        "songs": 274
+      },
+      {
+        "year": 1965,
+        "pc1": -0.119,
+        "pc2": -0.441,
+        "songs": 140
+      },
+      {
+        "year": 1966,
+        "pc1": -0.328,
+        "pc2": -0.34,
+        "songs": 106
+      },
+      {
+        "year": 1967,
+        "pc1": -0.28,
+        "pc2": -0.111,
+        "songs": 81
+      },
+      {
+        "year": 1968,
+        "pc1": -0.443,
+        "pc2": -0.082,
+        "songs": 118
+      },
+      {
+        "year": 1969,
+        "pc1": -0.82,
+        "pc2": 0.213,
+        "songs": 66
+      },
+      {
+        "year": 1970,
+        "pc1": -1.086,
+        "pc2": 0.363,
+        "songs": 49
+      },
+      {
+        "year": 1971,
+        "pc1": -1.25,
+        "pc2": 0.53,
+        "songs": 71
+      },
+      {
+        "year": 1972,
+        "pc1": -1.127,
+        "pc2": 0.644,
+        "songs": 43
+      },
+      {
+        "year": 1973,
+        "pc1": -1.241,
+        "pc2": 0.716,
+        "songs": 69
+      },
+      {
+        "year": 1974,
+        "pc1": -1.37,
+        "pc2": 0.684,
+        "songs": 93
+      },
+      {
+        "year": 1975,
+        "pc1": -1.306,
+        "pc2": 0.515,
+        "songs": 73
+      },
+      {
+        "year": 1976,
+        "pc1": -1.116,
+        "pc2": 0.596,
+        "songs": 78
+      },
+      {
+        "year": 1977,
+        "pc1": -1.052,
+        "pc2": 0.509,
+        "songs": 63
+      },
+      {
+        "year": 1978,
+        "pc1": -1.143,
+        "pc2": 0.638,
+        "songs": 54
+      },
+      {
+        "year": 1979,
+        "pc1": -1.132,
+        "pc2": 0.371,
+        "songs": 40
+      },
+      {
+        "year": 1980,
+        "pc1": -1.037,
+        "pc2": 0.243,
+        "songs": 40
+      },
+      {
+        "year": 1981,
+        "pc1": -0.614,
+        "pc2": -0.075,
+        "songs": 67
+      },
+      {
+        "year": 1982,
+        "pc1": -0.667,
+        "pc2": -0.061,
+        "songs": 36
+      },
+      {
+        "year": 1983,
+        "pc1": -0.585,
+        "pc2": -0.053,
+        "songs": 28
+      },
+      {
+        "year": 1984,
+        "pc1": -0.847,
+        "pc2": 0.144,
+        "songs": 24
+      },
+      {
+        "year": 1985,
+        "pc1": -0.849,
+        "pc2": 0.101,
+        "songs": 37
+      },
+      {
+        "year": 1986,
+        "pc1": -0.632,
+        "pc2": -0.219,
+        "songs": 73
+      },
+      {
+        "year": 1987,
+        "pc1": -0.442,
+        "pc2": -0.407,
+        "songs": 60
+      },
+      {
+        "year": 1988,
+        "pc1": -0.184,
+        "pc2": -0.552,
+        "songs": 48
+      },
+      {
+        "year": 1989,
+        "pc1": -0.275,
+        "pc2": -0.287,
+        "songs": 47
+      },
+      {
+        "year": 1990,
+        "pc1": -0.142,
+        "pc2": -0.512,
+        "songs": 23
+      },
+      {
+        "year": 1991,
+        "pc1": -0.122,
+        "pc2": -0.574,
+        "songs": 46
+      },
+      {
+        "year": 1992,
+        "pc1": -0.215,
+        "pc2": -0.484,
+        "songs": 35
+      },
+      {
+        "year": 1993,
+        "pc1": -0.335,
+        "pc2": -0.304,
+        "songs": 23
+      },
+      {
+        "year": 1994,
+        "pc1": -0.393,
+        "pc2": -0.368,
+        "songs": 29
+      },
+      {
+        "year": 1995,
+        "pc1": -0.456,
+        "pc2": -0.389,
+        "songs": 28
+      },
+      {
+        "year": 1996,
+        "pc1": -0.445,
+        "pc2": -0.519,
+        "songs": 25
+      },
+      {
+        "year": 1997,
+        "pc1": -0.434,
+        "pc2": 0.072,
+        "songs": 32
+      },
+      {
+        "year": 1998,
+        "pc1": -0.39,
+        "pc2": 0.128,
+        "songs": 20
+      },
+      {
+        "year": 1999,
+        "pc1": -0.503,
+        "pc2": 0.646,
+        "songs": 34
+      },
+      {
+        "year": 2000,
+        "pc1": -0.425,
+        "pc2": 0.148,
+        "songs": 15
+      },
+      {
+        "year": 2001,
+        "pc1": -0.41,
+        "pc2": 0.225,
+        "songs": 18
+      },
+      {
+        "year": 2002,
+        "pc1": -0.253,
+        "pc2": -0.141,
+        "songs": 20
+      }
+    ],
+    "decade_raw": {
+      "1930": {
+        "danceability": 0.573,
+        "energy": 0.298,
+        "valence": 0.62,
+        "tempo": 124.267,
+        "loudness": -12.997,
+        "acousticness": 0.906,
+        "instrumentalness": 0.442,
+        "speechiness": 0.079,
+        "duration_min": 2.968,
+        "songs": 149
+      },
+      "1940": {
+        "danceability": 0.515,
+        "energy": 0.327,
+        "valence": 0.549,
+        "tempo": 119.401,
+        "loudness": -13.872,
+        "acousticness": 0.886,
+        "instrumentalness": 0.478,
+        "speechiness": 0.081,
+        "duration_min": 3.7,
+        "songs": 235
+      },
+      "1950": {
+        "danceability": 0.522,
+        "energy": 0.301,
+        "valence": 0.504,
+        "tempo": 112.879,
+        "loudness": -14.775,
+        "acousticness": 0.787,
+        "instrumentalness": 0.36,
+        "speechiness": 0.061,
+        "duration_min": 4.887,
+        "songs": 3652
+      },
+      "1960": {
+        "danceability": 0.499,
+        "energy": 0.305,
+        "valence": 0.452,
+        "tempo": 111.374,
+        "loudness": -15.694,
+        "acousticness": 0.745,
+        "instrumentalness": 0.372,
+        "speechiness": 0.051,
+        "duration_min": 5.559,
+        "songs": 2409
+      },
+      "1970": {
+        "danceability": 0.508,
+        "energy": 0.506,
+        "valence": 0.554,
+        "tempo": 115.33,
+        "loudness": -13.417,
+        "acousticness": 0.482,
+        "instrumentalness": 0.472,
+        "speechiness": 0.05,
+        "duration_min": 6.656,
+        "songs": 633
+      },
+      "1980": {
+        "danceability": 0.544,
+        "energy": 0.39,
+        "valence": 0.495,
+        "tempo": 111.6,
+        "loudness": -15.151,
+        "acousticness": 0.547,
+        "instrumentalness": 0.384,
+        "speechiness": 0.058,
+        "duration_min": 5.344,
+        "songs": 460
+      },
+      "1990": {
+        "danceability": 0.543,
+        "energy": 0.37,
+        "valence": 0.462,
+        "tempo": 112.753,
+        "loudness": -13.738,
+        "acousticness": 0.597,
+        "instrumentalness": 0.329,
+        "speechiness": 0.053,
+        "duration_min": 4.9,
+        "songs": 295
+      },
+      "2000": {
+        "danceability": 0.547,
+        "energy": 0.436,
+        "valence": 0.465,
+        "tempo": 110.11,
+        "loudness": -12.082,
+        "acousticness": 0.567,
+        "instrumentalness": 0.372,
+        "speechiness": 0.051,
+        "duration_min": 4.754,
+        "songs": 135
+      },
+      "2010": {
+        "danceability": 0.574,
+        "energy": 0.468,
+        "valence": 0.418,
+        "tempo": 108.112,
+        "loudness": -10.194,
+        "acousticness": 0.497,
+        "instrumentalness": 0.206,
+        "speechiness": 0.08,
+        "duration_min": 4.35,
+        "songs": 22
+      }
+    },
+    "decade_z": {
+      "1930": {
+        "danceability": 0.205,
+        "energy": -1.332,
+        "valence": 0.372,
+        "tempo": 0.204,
+        "loudness": -0.728,
+        "acousticness": 1.909,
+        "instrumentalness": 1.328,
+        "speechiness": 0.126,
+        "duration_ms": -1.05
+      },
+      "1940": {
+        "danceability": -0.228,
+        "energy": -1.197,
+        "valence": 0.018,
+        "tempo": -0.05,
+        "loudness": -0.937,
+        "acousticness": 1.84,
+        "instrumentalness": 1.481,
+        "speechiness": 0.145,
+        "duration_ms": -0.466
+      },
+      "1950": {
+        "danceability": -0.174,
+        "energy": -1.314,
+        "valence": -0.205,
+        "tempo": -0.39,
+        "loudness": -1.153,
+        "acousticness": 1.505,
+        "instrumentalness": 0.976,
+        "speechiness": -0.115,
+        "duration_ms": 0.355
+      },
+      "1960": {
+        "danceability": -0.34,
+        "energy": -1.298,
+        "valence": -0.465,
+        "tempo": -0.469,
+        "loudness": -1.373,
+        "acousticness": 1.363,
+        "instrumentalness": 1.026,
+        "speechiness": -0.251,
+        "duration_ms": 0.825
+      },
+      "1970": {
+        "danceability": -0.277,
+        "energy": -0.368,
+        "valence": 0.043,
+        "tempo": -0.262,
+        "loudness": -0.828,
+        "acousticness": 0.47,
+        "instrumentalness": 1.456,
+        "speechiness": -0.259,
+        "duration_ms": 1.424
+      },
+      "1980": {
+        "danceability": -0.011,
+        "energy": -0.904,
+        "valence": -0.252,
+        "tempo": -0.457,
+        "loudness": -1.243,
+        "acousticness": 0.688,
+        "instrumentalness": 1.08,
+        "speechiness": -0.156,
+        "duration_ms": 0.833
+      },
+      "1990": {
+        "danceability": -0.019,
+        "energy": -0.998,
+        "valence": -0.417,
+        "tempo": -0.397,
+        "loudness": -0.905,
+        "acousticness": 0.858,
+        "instrumentalness": 0.841,
+        "speechiness": -0.228,
+        "duration_ms": 0.589
+      },
+      "2000": {
+        "danceability": 0.01,
+        "energy": -0.691,
+        "valence": -0.398,
+        "tempo": -0.535,
+        "loudness": -0.509,
+        "acousticness": 0.758,
+        "instrumentalness": 1.026,
+        "speechiness": -0.246,
+        "duration_ms": 0.464
+      },
+      "2010": {
+        "danceability": 0.213,
+        "energy": -0.544,
+        "valence": -0.633,
+        "tempo": -0.639,
+        "loudness": -0.057,
+        "acousticness": 0.519,
+        "instrumentalness": 0.317,
+        "speechiness": 0.14,
+        "duration_ms": 0.199
+      }
+    },
+    "velocity": [
+      {
+        "year": 1938,
+        "velocity": 2.287
+      },
+      {
+        "year": 1939,
+        "velocity": 0.663
+      },
+      {
+        "year": 1940,
+        "velocity": 0.797
+      },
+      {
+        "year": 1941,
+        "velocity": 1.345
+      },
+      {
+        "year": 1942,
+        "velocity": 1.608
+      },
+      {
+        "year": 1943,
+        "velocity": 0.892
+      },
+      {
+        "year": 1944,
+        "velocity": 0.848
+      },
+      {
+        "year": 1945,
+        "velocity": 1.634
+      },
+      {
+        "year": 1946,
+        "velocity": 1.939
+      },
+      {
+        "year": 1947,
+        "velocity": 1.726
+      },
+      {
+        "year": 1948,
+        "velocity": 1.5
+      },
+      {
+        "year": 1949,
+        "velocity": 2.233
+      },
+      {
+        "year": 1950,
+        "velocity": 2.134
+      },
+      {
+        "year": 1951,
+        "velocity": 1.269
+      },
+      {
+        "year": 1952,
+        "velocity": 1.023
+      },
+      {
+        "year": 1953,
+        "velocity": 1.558
+      },
+      {
+        "year": 1954,
+        "velocity": 1.651
+      },
+      {
+        "year": 1955,
+        "velocity": 1.546
+      },
+      {
+        "year": 1956,
+        "velocity": 0.999
+      },
+      {
+        "year": 1957,
+        "velocity": 0.657
+      },
+      {
+        "year": 1958,
+        "velocity": 0.805
+      },
+      {
+        "year": 1959,
+        "velocity": 0.654
+      },
+      {
+        "year": 1960,
+        "velocity": 0.451
+      },
+      {
+        "year": 1961,
+        "velocity": 0.199
+      },
+      {
+        "year": 1962,
+        "velocity": 0.476
+      },
+      {
+        "year": 1963,
+        "velocity": 0.483
+      },
+      {
+        "year": 1964,
+        "velocity": 0.536
+      },
+      {
+        "year": 1965,
+        "velocity": 0.638
+      },
+      {
+        "year": 1966,
+        "velocity": 0.78
+      },
+      {
+        "year": 1967,
+        "velocity": 1.074
+      },
+      {
+        "year": 1968,
+        "velocity": 1.176
+      },
+      {
+        "year": 1969,
+        "velocity": 1.229
+      },
+      {
+        "year": 1970,
+        "velocity": 1.072
+      },
+      {
+        "year": 1971,
+        "velocity": 0.874
+      },
+      {
+        "year": 1972,
+        "velocity": 0.593
+      },
+      {
+        "year": 1973,
+        "velocity": 0.316
+      },
+      {
+        "year": 1974,
+        "velocity": 0.47
+      },
+      {
+        "year": 1975,
+        "velocity": 0.466
+      },
+      {
+        "year": 1976,
+        "velocity": 0.56
+      },
+      {
+        "year": 1977,
+        "velocity": 0.762
+      },
+      {
+        "year": 1978,
+        "velocity": 0.766
+      },
+      {
+        "year": 1979,
+        "velocity": 1.183
+      },
+      {
+        "year": 1980,
+        "velocity": 1.194
+      },
+      {
+        "year": 1981,
+        "velocity": 1.005
+      },
+      {
+        "year": 1982,
+        "velocity": 0.439
+      },
+      {
+        "year": 1983,
+        "velocity": 0.893
+      },
+      {
+        "year": 1984,
+        "velocity": 0.755
+      },
+      {
+        "year": 1985,
+        "velocity": 0.873
+      },
+      {
+        "year": 1986,
+        "velocity": 1.154
+      },
+      {
+        "year": 1987,
+        "velocity": 1.0
+      },
+      {
+        "year": 1988,
+        "velocity": 0.971
+      },
+      {
+        "year": 1989,
+        "velocity": 0.568
+      },
+      {
+        "year": 1990,
+        "velocity": 0.555
+      },
+      {
+        "year": 1991,
+        "velocity": 0.586
+      },
+      {
+        "year": 1992,
+        "velocity": 0.465
+      },
+      {
+        "year": 1993,
+        "velocity": 0.593
+      },
+      {
+        "year": 1994,
+        "velocity": 0.599
+      },
+      {
+        "year": 1995,
+        "velocity": 1.0
+      },
+      {
+        "year": 1996,
+        "velocity": 0.859
+      },
+      {
+        "year": 1997,
+        "velocity": 1.142
+      },
+      {
+        "year": 1998,
+        "velocity": 0.732
+      },
+      {
+        "year": 1999,
+        "velocity": 0.648
+      },
+      {
+        "year": 2000,
+        "velocity": 0.684
+      }
+    ],
+    "velocity_q90": 1.629,
+    "episodes": [
+      {
+        "year": 1949,
+        "velocity": 2.233
+      },
+      {
+        "year": 1954,
+        "velocity": 1.651
+      },
+      {
+        "year": 1969,
+        "velocity": 1.229
+      },
+      {
+        "year": 1980,
+        "velocity": 1.194
+      }
+    ],
+    "episode_feature_change": {
+      "1949": {
+        "danceability": 0.292,
+        "energy": -1.001,
+        "valence": -0.323,
+        "tempo": -0.332,
+        "loudness": -1.073,
+        "acousticness": -0.285,
+        "instrumentalness": -0.331,
+        "speechiness": -0.845,
+        "duration_ms": -1.277
+      },
+      "1954": {
+        "danceability": 0.043,
+        "energy": -0.088,
+        "valence": -0.178,
+        "tempo": -0.006,
+        "loudness": -0.026,
+        "acousticness": -0.046,
+        "instrumentalness": -0.433,
+        "speechiness": -0.038,
+        "duration_ms": 1.579
+      },
+      "1969": {
+        "danceability": -0.148,
+        "energy": 0.565,
+        "valence": 0.136,
+        "tempo": -0.076,
+        "loudness": 0.485,
+        "acousticness": -0.548,
+        "instrumentalness": 0.193,
+        "speechiness": 0.01,
+        "duration_ms": 0.756
+      },
+      "1980": {
+        "danceability": 0.03,
+        "energy": -0.466,
+        "valence": -0.509,
+        "tempo": -0.358,
+        "loudness": -0.513,
+        "acousticness": 0.301,
+        "instrumentalness": -0.092,
+        "speechiness": 0.589,
+        "duration_ms": -0.334
+      }
+    }
+  },
+  "adoption": {
+    "pairs": 937,
+    "mean_alignment": 0.1643,
+    "null_mean": 0.024,
+    "null_sd": 0.0301,
+    "null_q95": 0.0732,
+    "null_q99": 0.0929,
+    "p_value": 0.0005,
+    "bootstrap_ci95": [
+      0.1054,
+      0.2215
+    ],
+    "positive_share": 0.5635,
+    "null_positive_share": 0.5116
+  },
+  "indicators": {
+    "top_dynamic": [
+      {
+        "artist": "Dave Brubeck",
+        "start": 1940,
+        "novelty": 1.127,
+        "anticipation": 0.61,
+        "H": 0.857,
+        "H_shrunk": 0.623,
+        "followers": 8,
+        "katz": 2.128,
+        "boundary": 6,
+        "future_followers": 8,
+        "S": 1.794
+      },
+      {
+        "artist": "George Duke",
+        "start": 1960,
+        "novelty": 1.625,
+        "anticipation": 0.364,
+        "H": 1.057,
+        "H_shrunk": 0.661,
+        "followers": 5,
+        "katz": 1.692,
+        "boundary": 10,
+        "future_followers": 5,
+        "S": 1.623
+      },
+      {
+        "artist": "Tal Farlow",
+        "start": 1940,
+        "novelty": 2.464,
+        "anticipation": 0.919,
+        "H": 0.525,
+        "H_shrunk": 0.382,
+        "followers": 8,
+        "katz": 3.029,
+        "boundary": 2,
+        "future_followers": 10,
+        "S": 1.581
+      },
+      {
+        "artist": "Grover Washington, Jr.",
+        "start": 1960,
+        "novelty": 1.191,
+        "anticipation": 0.231,
+        "H": 0.96,
+        "H_shrunk": 0.698,
+        "followers": 8,
+        "katz": 2.322,
+        "boundary": 1,
+        "future_followers": 12,
+        "S": 1.569
+      },
+      {
+        "artist": "David Sanborn",
+        "start": 1960,
+        "novelty": 1.428,
+        "anticipation": 0.755,
+        "H": 0.478,
+        "H_shrunk": 0.299,
+        "followers": 5,
+        "katz": 1.762,
+        "boundary": 0,
+        "future_followers": 7,
+        "S": 1.23
+      },
+      {
+        "artist": "Bob James",
+        "start": 1960,
+        "novelty": 1.762,
+        "anticipation": 0.302,
+        "H": 0.748,
+        "H_shrunk": 0.499,
+        "followers": 6,
+        "katz": 1.772,
+        "boundary": 2,
+        "future_followers": 6,
+        "S": 1.203
+      },
+      {
+        "artist": "Barney Kessel",
+        "start": 1940,
+        "novelty": 3.382,
+        "anticipation": 0.689,
+        "H": 0.345,
+        "H_shrunk": 0.23,
+        "followers": 6,
+        "katz": 4.807,
+        "boundary": 2,
+        "future_followers": 8,
+        "S": 1.01
+      },
+      {
+        "artist": "Erroll Garner",
+        "start": 1940,
+        "novelty": 2.184,
+        "anticipation": 0.743,
+        "H": 0.248,
+        "H_shrunk": 0.195,
+        "followers": 11,
+        "katz": 4.516,
+        "boundary": 4,
+        "future_followers": 13,
+        "S": 0.988
+      },
+      {
+        "artist": "Nat King Cole",
+        "start": 1930,
+        "novelty": 2.315,
+        "anticipation": 0.538,
+        "H": 0.345,
+        "H_shrunk": 0.271,
+        "followers": 11,
+        "katz": 5.071,
+        "boundary": 52,
+        "future_followers": 13,
+        "S": 0.945
+      },
+      {
+        "artist": "Horace Silver",
+        "start": 1950,
+        "novelty": 1.638,
+        "anticipation": 0.53,
+        "H": 0.325,
+        "H_shrunk": 0.255,
+        "followers": 11,
+        "katz": 5.761,
+        "boundary": 5,
+        "future_followers": 13,
+        "S": 0.902
+      },
+      {
+        "artist": "Oscar Peterson",
+        "start": 1940,
+        "novelty": 2.44,
+        "anticipation": 0.792,
+        "H": 0.149,
+        "H_shrunk": 0.123,
+        "followers": 14,
+        "katz": 4.655,
+        "boundary": 4,
+        "future_followers": 19,
+        "S": 0.879
+      },
+      {
+        "artist": "Clifford Brown",
+        "start": 1950,
+        "novelty": 1.416,
+        "anticipation": 0.69,
+        "H": 0.224,
+        "H_shrunk": 0.149,
+        "followers": 6,
+        "katz": 3.131,
+        "boundary": 0,
+        "future_followers": 9,
+        "S": 0.833
+      }
+    ],
+    "weight_robustness_spearman": {
+      "0.3": 0.91,
+      "0.4": 0.974,
+      "0.6": 0.979,
+      "0.7": 0.932
+    },
+    "archetypes": {
+      "catalysts_ahead_and_copied": [
+        {
+          "artist": "Dave Brubeck",
+          "start": 1940,
+          "novelty": 1.127,
+          "anticipation": 0.61,
+          "H": 0.857,
+          "H_shrunk": 0.623,
+          "followers": 8,
+          "katz": 2.128,
+          "boundary": 6,
+          "future_followers": 8,
+          "S": 1.794
+        },
+        {
+          "artist": "George Duke",
+          "start": 1960,
+          "novelty": 1.625,
+          "anticipation": 0.364,
+          "H": 1.057,
+          "H_shrunk": 0.661,
+          "followers": 5,
+          "katz": 1.692,
+          "boundary": 10,
+          "future_followers": 5,
+          "S": 1.623
+        },
+        {
+          "artist": "Tal Farlow",
+          "start": 1940,
+          "novelty": 2.464,
+          "anticipation": 0.919,
+          "H": 0.525,
+          "H_shrunk": 0.382,
+          "followers": 8,
+          "katz": 3.029,
+          "boundary": 2,
+          "future_followers": 10,
+          "S": 1.581
+        },
+        {
+          "artist": "Grover Washington, Jr.",
+          "start": 1960,
+          "novelty": 1.191,
+          "anticipation": 0.231,
+          "H": 0.96,
+          "H_shrunk": 0.698,
+          "followers": 8,
+          "katz": 2.322,
+          "boundary": 1,
+          "future_followers": 12,
+          "S": 1.569
+        },
+        {
+          "artist": "David Sanborn",
+          "start": 1960,
+          "novelty": 1.428,
+          "anticipation": 0.755,
+          "H": 0.478,
+          "H_shrunk": 0.299,
+          "followers": 5,
+          "katz": 1.762,
+          "boundary": 0,
+          "future_followers": 7,
+          "S": 1.23
+        },
+        {
+          "artist": "Bob James",
+          "start": 1960,
+          "novelty": 1.762,
+          "anticipation": 0.302,
+          "H": 0.748,
+          "H_shrunk": 0.499,
+          "followers": 6,
+          "katz": 1.772,
+          "boundary": 2,
+          "future_followers": 6,
+          "S": 1.203
+        },
+        {
+          "artist": "Barney Kessel",
+          "start": 1940,
+          "novelty": 3.382,
+          "anticipation": 0.689,
+          "H": 0.345,
+          "H_shrunk": 0.23,
+          "followers": 6,
+          "katz": 4.807,
+          "boundary": 2,
+          "future_followers": 8,
+          "S": 1.01
+        },
+        {
+          "artist": "Erroll Garner",
+          "start": 1940,
+          "novelty": 2.184,
+          "anticipation": 0.743,
+          "H": 0.248,
+          "H_shrunk": 0.195,
+          "followers": 11,
+          "katz": 4.516,
+          "boundary": 4,
+          "future_followers": 13,
+          "S": 0.988
+        }
+      ],
+      "canon_high_katz": [
+        {
+          "artist": "Charlie Parker",
+          "start": 1930,
+          "novelty": 1.697,
+          "anticipation": 0.258,
+          "H": 0.033,
+          "H_shrunk": 0.032,
+          "followers": 63,
+          "katz": 17.247,
+          "boundary": 17,
+          "future_followers": 78
+        },
+        {
+          "artist": "Lester Young",
+          "start": 1930,
+          "novelty": 1.262,
+          "anticipation": -0.813,
+          "H": -0.439,
+          "H_shrunk": -0.404,
+          "followers": 34,
+          "katz": 15.503,
+          "boundary": 6,
+          "future_followers": 41
+        },
+        {
+          "artist": "Miles Davis",
+          "start": 1940,
+          "novelty": 1.24,
+          "anticipation": -0.331,
+          "H": 0.116,
+          "H_shrunk": 0.11,
+          "followers": 58,
+          "katz": 13.874,
+          "boundary": 77,
+          "future_followers": 79
+        },
+        {
+          "artist": "Dizzy Gillespie",
+          "start": 1930,
+          "novelty": 0.848,
+          "anticipation": 0.251,
+          "H": 0.336,
+          "H_shrunk": 0.31,
+          "followers": 36,
+          "katz": 11.772,
+          "boundary": 15,
+          "future_followers": 42
+        },
+        {
+          "artist": "Thelonious Monk",
+          "start": 1940,
+          "novelty": 0.942,
+          "anticipation": 0.285,
+          "H": 0.077,
+          "H_shrunk": 0.068,
+          "followers": 21,
+          "katz": 11.678,
+          "boundary": 12,
+          "future_followers": 30
+        },
+        {
+          "artist": "John Coltrane",
+          "start": 1940,
+          "novelty": 1.686,
+          "anticipation": -0.522,
+          "H": 0.12,
+          "H_shrunk": 0.11,
+          "followers": 34,
+          "katz": 10.787,
+          "boundary": 52,
+          "future_followers": 60
+        },
+        {
+          "artist": "Bud Powell",
+          "start": 1940,
+          "novelty": 1.387,
+          "anticipation": 0.72,
+          "H": 0.07,
+          "H_shrunk": 0.063,
+          "followers": 25,
+          "katz": 8.45,
+          "boundary": 1,
+          "future_followers": 30
+        },
+        {
+          "artist": "Roy Eldridge",
+          "start": 1930,
+          "novelty": 1.944,
+          "anticipation": 0.281,
+          "H": -0.13,
+          "H_shrunk": -0.1,
+          "followers": 10,
+          "katz": 8.024,
+          "boundary": 1,
+          "future_followers": 11
+        }
+      ],
+      "bridges_cross_genre": [
+        {
+          "artist": "Miles Davis",
+          "start": 1940,
+          "novelty": 1.24,
+          "anticipation": -0.331,
+          "H": 0.116,
+          "H_shrunk": 0.11,
+          "followers": 58,
+          "katz": 13.874,
+          "boundary": 77,
+          "future_followers": 79
+        },
+        {
+          "artist": "Nat King Cole",
+          "start": 1930,
+          "novelty": 2.315,
+          "anticipation": 0.538,
+          "H": 0.345,
+          "H_shrunk": 0.271,
+          "followers": 11,
+          "katz": 5.071,
+          "boundary": 52,
+          "future_followers": 13
+        },
+        {
+          "artist": "John Coltrane",
+          "start": 1940,
+          "novelty": 1.686,
+          "anticipation": -0.522,
+          "H": 0.12,
+          "H_shrunk": 0.11,
+          "followers": 34,
+          "katz": 10.787,
+          "boundary": 52,
+          "future_followers": 60
+        },
+        {
+          "artist": "Quincy Jones",
+          "start": 1950,
+          "novelty": 1.495,
+          "anticipation": -0.208,
+          "H": 0.466,
+          "H_shrunk": 0.266,
+          "followers": 4,
+          "katz": 1.943,
+          "boundary": 25,
+          "future_followers": 4
+        },
+        {
+          "artist": "Sun Ra",
+          "start": 1940,
+          "novelty": 1.236,
+          "anticipation": -0.894,
+          "H": 0.015,
+          "H_shrunk": 0.01,
+          "followers": 6,
+          "katz": 2.223,
+          "boundary": 24,
+          "future_followers": 8
+        },
+        {
+          "artist": "Cab Calloway",
+          "start": 1930,
+          "novelty": 2.718,
+          "anticipation": 0.172,
+          "H": NaN,
+          "H_shrunk": 0.0,
+          "followers": 0,
+          "katz": 3.225,
+          "boundary": 23,
+          "future_followers": 1
+        },
+        {
+          "artist": "Mose Allison",
+          "start": 1950,
+          "novelty": 2.161,
+          "anticipation": -0.619,
+          "H": -0.442,
+          "H_shrunk": -0.111,
+          "followers": 1,
+          "katz": 1.254,
+          "boundary": 19,
+          "future_followers": 1
+        },
+        {
+          "artist": "Charlie Parker",
+          "start": 1930,
+          "novelty": 1.697,
+          "anticipation": 0.258,
+          "H": 0.033,
+          "H_shrunk": 0.032,
+          "followers": 63,
+          "katz": 17.247,
+          "boundary": 17,
+          "future_followers": 78
+        }
+      ],
+      "prophets_ahead_not_canonised": [
+        {
+          "artist": "Duke Jordan",
+          "start": 1940,
+          "novelty": 2.043,
+          "anticipation": 0.858,
+          "H": -0.734,
+          "H_shrunk": -0.367,
+          "followers": 3,
+          "katz": 1.325,
+          "boundary": 0,
+          "future_followers": 3
+        },
+        {
+          "artist": "Shelly Manne",
+          "start": 1940,
+          "novelty": 3.293,
+          "anticipation": 0.851,
+          "H": -0.645,
+          "H_shrunk": -0.258,
+          "followers": 2,
+          "katz": 1.41,
+          "boundary": 1,
+          "future_followers": 3
+        },
+        {
+          "artist": "Jimmy Giuffre",
+          "start": 1940,
+          "novelty": 1.81,
+          "anticipation": 0.823,
+          "H": -0.819,
+          "H_shrunk": -0.205,
+          "followers": 1,
+          "katz": 1.141,
+          "boundary": 0,
+          "future_followers": 1
+        },
+        {
+          "artist": "John Lewis",
+          "start": 1940,
+          "novelty": 2.322,
+          "anticipation": 0.764,
+          "H": -0.196,
+          "H_shrunk": -0.157,
+          "followers": 12,
+          "katz": 3.717,
+          "boundary": 0,
+          "future_followers": 14
+        },
+        {
+          "artist": "Herbie Hancock",
+          "start": 1960,
+          "novelty": 1.454,
+          "anticipation": 0.76,
+          "H": -0.215,
+          "H_shrunk": -0.161,
+          "followers": 9,
+          "katz": 3.176,
+          "boundary": 12,
+          "future_followers": 16
+        },
+        {
+          "artist": "Lee Morgan",
+          "start": 1960,
+          "novelty": 1.959,
+          "anticipation": 0.729,
+          "H": -0.14,
+          "H_shrunk": -0.08,
+          "followers": 4,
+          "katz": 1.906,
+          "boundary": 0,
+          "future_followers": 7
+        },
+        {
+          "artist": "Andrew Hill",
+          "start": 1950,
+          "novelty": 2.224,
+          "anticipation": 0.701,
+          "H": -1.23,
+          "H_shrunk": -0.308,
+          "followers": 1,
+          "katz": 1.396,
+          "boundary": 1,
+          "future_followers": 3
+        },
+        {
+          "artist": "Woody Herman",
+          "start": 1930,
+          "novelty": 1.924,
+          "anticipation": 0.658,
+          "H": -0.352,
+          "H_shrunk": -0.22,
+          "followers": 5,
+          "katz": 2.263,
+          "boundary": 1,
+          "future_followers": 6
+        }
+      ]
+    },
+    "spearman": {
+      "novelty": {
+        "novelty": 1.0,
+        "anticipation": -0.022,
+        "H_shrunk": -0.053,
+        "katz": -0.372,
+        "boundary": -0.155,
+        "future_followers": -0.347
+      },
+      "anticipation": {
+        "novelty": -0.022,
+        "anticipation": 1.0,
+        "H_shrunk": 0.048,
+        "katz": 0.109,
+        "boundary": -0.008,
+        "future_followers": 0.092
+      },
+      "H_shrunk": {
+        "novelty": -0.053,
+        "anticipation": 0.048,
+        "H_shrunk": 1.0,
+        "katz": 0.254,
+        "boundary": 0.201,
+        "future_followers": 0.289
+      },
+      "katz": {
+        "novelty": -0.372,
+        "anticipation": 0.109,
+        "H_shrunk": 0.254,
+        "katz": 1.0,
+        "boundary": 0.371,
+        "future_followers": 0.897
+      },
+      "boundary": {
+        "novelty": -0.155,
+        "anticipation": -0.008,
+        "H_shrunk": 0.201,
+        "katz": 0.371,
+        "boundary": 1.0,
+        "future_followers": 0.417
+      },
+      "future_followers": {
+        "novelty": -0.347,
+        "anticipation": 0.092,
+        "H_shrunk": 0.289,
+        "katz": 0.897,
+        "boundary": 0.417,
+        "future_followers": 1.0
+      }
+    },
+    "with_anticipation": 283,
+    "with_followers": 175,
+    "eligible": 59,
+    "shrinkage_spearman": 0.993
+  },
+  "styles": {
+    "silhouette": 0.175,
+    "clusters": [
+      {
+        "cluster": "A up-tempo acoustic",
+        "share": 0.2,
+        "centroid": {
+          "danceability": 0.15,
+          "energy": -0.86,
+          "valence": 0.4,
+          "tempo": 0.32,
+          "loudness": -1.03,
+          "acousticness": 1.27,
+          "instrumentalness": 2.78,
+          "speechiness": -0.18,
+          "duration_ms": 0.26
+        },
+        "artists": [
+          "Oscar Peterson",
+          "Erroll Garner",
+          "Lester Young",
+          "The Dave Brubeck Quartet",
+          "Stan Getz"
+        ]
+      },
+      {
+        "cluster": "B short-form / songbook",
+        "share": 0.238,
+        "centroid": {
+          "danceability": -0.06,
+          "energy": -0.94,
+          "valence": 0.27,
+          "tempo": -0.06,
+          "loudness": -0.67,
+          "acousticness": 1.17,
+          "instrumentalness": -0.35,
+          "speechiness": 0.09,
+          "duration_ms": -0.87
+        },
+        "artists": [
+          "Nat King Cole",
+          "Louis Prima",
+          "Charlie Parker",
+          "Miles Davis",
+          "Thelonious Monk"
+        ]
+      },
+      {
+        "cluster": "C quiet ballad",
+        "share": 0.305,
+        "centroid": {
+          "danceability": -0.17,
+          "energy": -0.82,
+          "valence": -0.07,
+          "tempo": -0.25,
+          "loudness": -0.72,
+          "acousticness": 0.9,
+          "instrumentalness": -0.16,
+          "speechiness": -0.21,
+          "duration_ms": 2.02
+        },
+        "artists": [
+          "Miles Davis",
+          "John Coltrane",
+          "Charles Mingus",
+          "Sonny Rollins",
+          "Thelonious Monk"
+        ]
+      },
+      {
+        "cluster": "D long-form modern",
+        "share": 0.257,
+        "centroid": {
+          "danceability": -0.67,
+          "energy": -2.09,
+          "valence": -1.49,
+          "tempo": -1.41,
+          "loudness": -2.25,
+          "acousticness": 1.97,
+          "instrumentalness": 2.44,
+          "speechiness": -0.33,
+          "duration_ms": 0.41
+        },
+        "artists": [
+          "Oscar Peterson",
+          "Bill Evans Trio",
+          "Thelonious Monk",
+          "Bill Evans",
+          "Miles Davis"
+        ]
+      }
+    ],
+    "share_by_decade": {
+      "1920": {
+        "A up-tempo acoustic": 0.333,
+        "B short-form / songbook": 0.667,
+        "C quiet ballad": 0.0,
+        "D long-form modern": 0.0
+      },
+      "1930": {
+        "A up-tempo acoustic": 0.403,
+        "B short-form / songbook": 0.456,
+        "C quiet ballad": 0.007,
+        "D long-form modern": 0.134
+      },
+      "1940": {
+        "A up-tempo acoustic": 0.345,
+        "B short-form / songbook": 0.345,
+        "C quiet ballad": 0.077,
+        "D long-form modern": 0.234
+      },
+      "1950": {
+        "A up-tempo acoustic": 0.171,
+        "B short-form / songbook": 0.273,
+        "C quiet ballad": 0.29,
+        "D long-form modern": 0.267
+      },
+      "1960": {
+        "A up-tempo acoustic": 0.165,
+        "B short-form / songbook": 0.187,
+        "C quiet ballad": 0.351,
+        "D long-form modern": 0.298
+      },
+      "1970": {
+        "A up-tempo acoustic": 0.336,
+        "B short-form / songbook": 0.115,
+        "C quiet ballad": 0.39,
+        "D long-form modern": 0.158
+      },
+      "1980": {
+        "A up-tempo acoustic": 0.246,
+        "B short-form / songbook": 0.217,
+        "C quiet ballad": 0.304,
+        "D long-form modern": 0.233
+      },
+      "1990": {
+        "A up-tempo acoustic": 0.237,
+        "B short-form / songbook": 0.264,
+        "C quiet ballad": 0.298,
+        "D long-form modern": 0.2
+      },
+      "2000": {
+        "A up-tempo acoustic": 0.274,
+        "B short-form / songbook": 0.304,
+        "C quiet ballad": 0.244,
+        "D long-form modern": 0.178
+      },
+      "2010": {
+        "A up-tempo acoustic": 0.091,
+        "B short-form / songbook": 0.5,
+        "C quiet ballad": 0.318,
+        "D long-form modern": 0.091
+      },
+      "2020": {
+        "A up-tempo acoustic": 0.0,
+        "B short-form / songbook": 1.0,
+        "C quiet ballad": 0.0,
+        "D long-form modern": 0.0
+      }
+    }
+  },
+  "robustness": {
+    "loo_spearman": {
+      "novelty": 0.9955,
+      "anticipation": 0.9992
+    },
+    "horizon5_spearman": 0.7659,
+    "liveness_included_spearman": {
+      "novelty": 0.9647,
+      "anticipation": 0.9927
+    },
+    "liveness_artifact": {
+      "cluster_size": 589,
+      "liveness_z": 4.74
+    }
+  }
+}
