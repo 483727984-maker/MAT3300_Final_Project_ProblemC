@@ -1,13 +1,13 @@
 \section{Notation}\label{sec:notation}
 
 \Cref{tab:notation} lists the symbols used throughout the report, grouped into Model~I (network), Model~II (features), Model~III (genre
-flow / relatedness), and Model~IV (temporal revolutions).
+flow / relatedness), and Model~V (temporal dynamics).
 
 \begin{table}[htbp]
 \centering
 \caption{Main notation. Upper block: directed influence network (Model~I).
 Middle: audio features (Model~II). Lower blocks: genre flow (Model~III)
-and temporal dual-channel leaps (Model~IV).}
+and temporal dual-channel leaps (Model~V).}
 \label{tab:notation}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -47,7 +47,7 @@ $c_K(t)$ & Katz-weighted cross-genre share of influence in decade $t$ \\
 $K_g(t)$ & Genre share of outgoing Katz mass among artists starting in decade $t$ \\
 $c_g$ & Katz-weighted genre centroid in feature space (Model~III similarity) \\
 \midrule
-\multicolumn{2}{@{}l}{\emph{Temporal dual-channel (Model~IV / Task~5)}} \\
+\multicolumn{2}{@{}l}{\emph{Temporal dynamics (Model~V / Tasks 5--6)}} \\
 \midrule
 $\mathbf{x}(t)$ & Year-$t$ $z$-scored industry feature state from \texttt{data\_by\_year} \\
 $E(t)$ & Sonic leap size $\|\mathbf{x}(t)-\mathbf{x}(t-1)\|_2$ \\

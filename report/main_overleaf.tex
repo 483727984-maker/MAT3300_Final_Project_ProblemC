@@ -79,6 +79,9 @@
 
 \numberwithin{equation}{section}
 
+% Keep the table of contents to one page (25-page budget): sections only.
+\setcounter{tocdepth}{1}
+
 %------------------------------------------------------------------------------
 % Header / footer
 %------------------------------------------------------------------------------
@@ -117,7 +120,48 @@
 \begin{center}
   {\Large\bfseries Summary}
 \end{center}
-% TODO: summary text (problem -> approach -> key results -> validation -> conclusion)
+\noindent\textbf{Problem and approach.} From \texttt{influence\_data.csv}
+we build a directed influence network of $N=5{,}603$ artists and
+$|E|=42{,}770$ reported edges, and join it with the Spotify audio features
+of \texttt{data\_by\_artist.csv}. Problem~C is answered by four
+interlocking models---centrality analysis of the network (Model~I), a
+feature-based similarity space (Model~II), a genre-level aggregation of
+the two (Model~III), and a matched-control test of acoustic contagion
+(Model~IV)---closed by a dual-channel synthesis of stylistic revolutions
+and the jazz subnetwork (Model~V).
+
+\noindent\textbf{Key results.}
+\emph{(i)}~Direct and multi-step influence agree in bulk (Spearman
+$\rho=0.953$) but diverge at the top: the Katz ranking is led by Chuck
+Berry, followed by The Beatles, Muddy Waters, Louis Jordan and Bob Dylan;
+rankings are insensitive to the attenuation $\alpha$ (Spearman
+${\ge}\,0.975$) and to the $733$ time-reversed edges.
+\emph{(ii)}~Genres are real acoustic categories
+($\bar d_{\mathrm{within}}=3.73$ vs.\ $\bar d_{\mathrm{between}}=4.55$;
+unchanged under PCA), but similarity is not influence.
+\emph{(iii)}~Cross-genre influence peaks for the 1960s cohort (raw share
+$0.37$; Katz-weighted $0.53$ already in the 1950s) and settles at $0.18$;
+reported influence decays with sonic distance (Mantel $r=-0.41$,
+$p=0.0008$), yielding a three-regime relatedness typology and a strong
+hub asymmetry (Pop/Rock supplies $45\%$ of Electronic's inflow; the
+reverse flow is $1.1\%$).
+\emph{(iv)}~Reported edges are systematically more similar than
+genre-and-decade matched controls ($\bar s^{*}=0.0354$, bootstrap CI
+$[0.0347,\,0.0360]$, $70.1\%$ of edges positive): the similarity data
+\emph{do} support the influence network. Style characteristics
+(acousticness, valence, energy, danceability) are an order of magnitude
+more contagious than structural ones, and only danceability and valence
+additionally show directional tracking.
+\emph{(v)}~The only \emph{strong} revolutionary decade is the 1970s
+(sonic and network channels both fire); jazz evolves through catalysts
+(Dave Brubeck), bridges (Miles Davis) and guardians, with the 1949 bebop
+break as the sharpest discontinuity.
+
+\noindent\textbf{Validation.} Every model carries its own robustness
+check---attenuation scans, a PCA re-specification, genre-label permutation
+tests, Mantel permutation, and control-count variation
+($K=10\to25$ moves the headline result by $0.0004$)---summarized in
+\cref{sec:validation}.
 \vspace{0.6em}
 \noindent\textbf{Keywords:} directed network; musical influence; similarity
 measurement; genre evolution; PageRank; sensitivity analysis
@@ -135,7 +179,39 @@ measurement; genre evolution; PageRank; sensitivity analysis
 \pagenumbering{arabic}
 
 \section{Introduction and Problem Restatement}\label{sec:intro}
-% TODO: background; restatement of the 7 tasks from Problem C; roadmap.
+
+Popular music evolves through \emph{reported} influence: artists name the
+predecessors who shaped them. The dataset pairs this directed network
+(\texttt{influence\_data.csv}: $5{,}603$ artists, $42{,}770$ influence
+statements) with per-artist Spotify audio features
+(\texttt{data\_by\_artist.csv}), so we can ask not only \emph{who}
+influenced \emph{whom} but also \emph{whether} the claimed influence is
+audible in the music itself. We answer the seven tasks of Problem~C with
+four interlocking models plus a temporal synthesis:
+
+\begin{itemize}[leftmargin=1.9em,itemsep=1pt]
+  \item \textbf{Model~I} (\cref{sec:model-influence}) builds the directed
+        influence network and identifies influencers with in/out-degree,
+        PageRank and Katz centrality (Tasks~1--2);
+  \item \textbf{Model~II} (\cref{sec:model-similarity}) measures musical
+        similarity in a standardized feature space (Task~2);
+  \item \textbf{Model~III} (\cref{sec:model-genre}) aggregates both over
+        the genre partition: how genre influence flows and changes over
+        time, and which genres are related (Task~3);
+  \item \textbf{Model~IV} (\cref{sec:model-q4}) tests with matched controls
+        whether reported influence leaves an acoustic trace and which
+        characteristics are contagious (Task~4);
+  \item \textbf{Model~V} (\cref{sec:model-temporal}) reuses the flow and
+        similarity layers to date stylistic revolutions (Task~5) and to
+        profile the jazz subnetwork (Task~6); Task~7 (the internet era)
+        extends the same decade-indexed tools.
+\end{itemize}
+
+Each model inherits the cleaned data of \cref{sec:data} and feeds the
+next: Model~II supplies the distances that Model~III correlates with
+genre flows, and Model~IV matches its controls inside Model~II's space.
+All models share one time axis---the follower's active-start decade
+(Assumption~A2)---so their results are directly comparable.
 
 \section{Assumptions and Justifications}\label{sec:assumptions}
 \begin{enumerate}[label=\textbf{A\arabic*.},leftmargin=2.2em]
@@ -186,10 +262,99 @@ measurement; genre evolution; PageRank; sensitivity analysis
 \input{model4_t6}
 
 \section{Validation and Sensitivity Analysis}\label{sec:validation}
-% TODO: validation checks; sensitivity table over key parameters; limitations.
+
+Each model was validated against the analyst choices that could plausibly
+move its conclusions; \cref{tab:validation} collects the checks and their
+key outcomes. Three remarks. First, the headline rankings and shares are
+\emph{parameter-insensitive}: Katz rankings are stable over the entire
+admissible attenuation range, and the matched-control result moves by
+$0.0004$ when the control count is tripled. Second, the two
+\emph{specification} alternatives we ran---PCA-scored distances for
+Model~II and a Foote-style novelty window for Model~V---reproduce every
+qualitative conclusion. Third, the checks that \emph{could} have broken a
+result did not: shuffling genre labels destroys the cross-genre pattern
+at $z$ between $-10$ and $-91$, the Mantel association survives
+$5{,}000$ permutations, and excluding the $733$ time-reversed edges moves
+no reported number by more than $0.023$.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Validation summary. Each row is developed in the cited section.}
+\label{tab:validation}
+\begin{tabular}{@{}p{0.14\textwidth}p{0.34\textwidth}p{0.42\textwidth}@{}}
+\toprule
+Model & Check & Key outcome \\
+\midrule
+I (\cref{sec:model-influence})
+  & Katz attenuation scan; reversed-edge removal
+  & Spearman ${\ge}\,0.975$ over $\alpha\in[0.02,0.25]$; 733 reversed
+    edges (1.7\%) do not move per-artist scores (sec.~5.7) \\
+\addlinespace
+II (\cref{sec:model-similarity})
+  & PCA re-specification (80\% variance, $r=6$)
+  & $\bar d_{\mathrm{within}}=3.28<\bar d_{\mathrm{between}}=4.10$, as in
+    the full space ($3.73<4.55$) \\
+\addlinespace
+III (\cref{sec:model-genre})
+  & Genre-label permutation; Mantel test; reversed edges
+  & Homophily $z=-10$ to $-91$; distance--flow $r=-0.41$, $p=0.0008$;
+    decade shares shift ${\le}\,0.023$ \\
+\addlinespace
+IV (\cref{sec:model-q4})
+  & Wilcoxon + bootstrap CI; control count $K$
+  & $p<10^{-15}$, CI $[0.0347,0.0360]$; $K=10\to25$ moves $\bar s^{*}$ by
+    $0.0004$ \\
+\addlinespace
+V (\cref{sec:model-temporal})
+  & Foote-style novelty companion
+  & Same qualitative peaks as the dual-channel measure \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Strengths, Weaknesses and Conclusion}\label{sec:conclusion}
-% TODO: strengths; weaknesses; conclusion per task.
+
+\noindent\textbf{Strengths.}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item \emph{One network, reused everywhere.} Every question is answered
+        by aggregating or conditioning the same cleaned network and feature
+        space; no model introduces a new edge definition, so all results
+        are mutually comparable.
+  \item \emph{Causal-honest design.} Model~IV separates homophily from
+        influence with matched controls instead of interpreting raw
+        similarity, and its claims are worded as consistency, not proof.
+  \item \emph{Every number is stress-tested.} Attenuation scans,
+        permutation tests and control-count variation bound the
+        sensitivity of each headline result (\cref{sec:validation}).
+\end{itemize}
+
+\noindent\textbf{Weaknesses.}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item \emph{Single main genre per artist.} Artists spanning several
+        styles (Assumption~A4) are counted once, which blurs
+        cross-genre flow estimates at the margin.
+  \item \emph{One acoustic snapshot.} Features are a single post-hoc
+        observation per artist, so influence can be detected only as
+        excess resemblance, never as observed change.
+  \item \emph{Reported edges are self-declared.} Citation practices
+        (status-seeking, publicity) contaminate the network itself; the
+        negative dose--response of Model~IV is evidence of exactly such a
+        status component.
+\end{itemize}
+
+\noindent\textbf{Conclusion per task.}
+\emph{T1--T2:} influence is ranked by Katz centrality (led by Chuck
+Berry), with direct and multi-step views agreeing in bulk ($\rho=0.953$)
+and diverging at the top. \emph{T3:} genres are acoustically distinct;
+reported influence rises to a 1960s cross-genre peak, decays with sonic
+distance, and its typology exposes hub dominance rather than exchange.
+\emph{T4:} the similarity data support the reported influence network
+($\bar s^{*}=0.0354$); \emph{style} characteristics are contagious,
+\emph{structural} ones are not, and only danceability and valence track
+directionally. \emph{T5--T6:} the 1970s is the only dual-channel
+revolution; jazz reproduces the same roles in miniature (catalysts,
+bridges, guardians). \emph{T7:} the decade-indexed flow and contagion
+tools extend directly to the post-1995 internet era.
 
 %------------------------------------------------------------------------------
 % 4. ONE-PAGE DOCUMENT TO THE ICM SOCIETY — must fit on ONE page.
@@ -206,7 +371,39 @@ measurement; genre evolution; PageRank; sensitivity analysis
   \textbf{Subject:} & The value of network-based measures of musical influence \\
   \textbf{Date:}    & November 29, 2026 \\
 \end{tabular}
-% TODO: memo body (keep within one page).
+\noindent\textbf{What our approach delivers.} We measured musical
+influence with a directed network rather than raw similarity counts. The
+distinction matters: most acoustic resemblance is homophily, and only a
+matched-control comparison isolates the \emph{excess} similarity along
+reported edges---the genuine acoustic footprint of influence. Because
+every measure is built on one cleaned network with a shared decade clock,
+the answers to all seven tasks are mutually comparable and each carries
+its own sensitivity analysis. The practical takeaways are that
+(i)~influence should be measured multi-step (Katz), not by raw citation
+counts; (ii)~\emph{style} characteristics---texture, mood,
+groove---are what followers actually absorb, an order of magnitude more
+than structural characteristics; and (iii)~cross-genre borrowing peaked
+in the mid-century and has narrowed since, so genre categories remain
+meaningful but increasingly function as silos.
+
+\noindent\textbf{What richer data would change.} Our data contain one
+acoustic snapshot and one self-declared edge set per artist. Release-level
+or streaming time series would let us observe \emph{change after} the
+reported influence and upgrade consistency claims to before/after
+estimates; multi-genre or subgenre labels would remove the single-label
+assumption that blurs cross-genre flows at the margin; and producer or
+collaborator credits would separate personal mentorship from stylistic
+lineage.
+
+\noindent\textbf{Recommendations for further study.}
+(1)~Extend the decade-indexed flow and contagion measures to the
+post-1995 internet era, where recommendation algorithms rather than
+personal networks may drive homogenization.
+(2)~Model reported edges jointly with the similarity space---for example,
+citation as a function of sonic distance---to disentangle status-driven
+from sound-driven citation.
+(3)~Replicate the matched-control design in other cultural domains (film,
+literature), where comparable influence declarations exist.
 
 %------------------------------------------------------------------------------
 % 5. REFERENCES — cite every external source of data, ideas, figures and code.
