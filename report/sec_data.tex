@@ -1,28 +1,18 @@
 \section{Data Preprocessing and Exploration}\label{sec:data}
 
-We use only the four official files in \texttt{ProblemC\_Music\_data/};
-no external data are introduced. This section documents the files, the
-cleaning pipeline, and two data-quality audits whose findings shape every
-later model. The influence data require their own cleaning (used by
-Model~I), and the feature data require a different one (used by Model~II);
-we keep the two pipelines explicit and separate.
-
-\subsection{Files and Roles}\label{subsec:data-files}
-
-\begin{itemize}
-  \item \texttt{influence\_data.csv} (42{,}770 rows $\times$ 8 columns):
-        directed influencer$\to$follower edges, with both artists'
-        \texttt{main\_genre} and \texttt{active\_start} (decade). Primary
-        input to Model~I; also serves as the genre dictionary for Model~II.
-  \item \texttt{data\_by\_artist.csv} (5{,}810 artists): artist-level mean
-        Spotify features (primary input to Model~II).
-  \item \texttt{full\_music\_data.csv} ($\approx 98{,}340$ tracks):
-        song-level features with a stringified list of performing-artist
-        identifiers (4{,}410 tracks involve more than one artist; reserved
-        for finer temporal analyses).
-  \item \texttt{data\_by\_year.csv}: yearly mean features from 1921--2020
-        (reserved for evolution plots).
-\end{itemize}
+We use only the official files in \texttt{ProblemC\_Music\_data/}; no
+external data are introduced. Of the four files,
+\texttt{influence\_data.csv} ($42{,}770$ directed influencer$\to$follower
+edges, with both artists' \texttt{main\_genre} and \texttt{active\_start}
+decade) is the primary input to Model~I and also serves as the genre
+dictionary for Model~II, and \texttt{data\_by\_artist.csv} ($5{,}810$
+artists) provides artist-level mean Spotify features for Model~II; the
+song-level \texttt{full\_music\_data.csv} and yearly
+\texttt{data\_by\_year.csv} are reserved for finer temporal analyses and
+are not used in the models below. This section documents the two cleaning
+pipelines and two data-quality audits whose findings shape every later
+model; the influence data require their own cleaning, and the feature
+data a different one, so we keep the two pipelines explicit and separate.
 
 \subsection{Cleaning of the Influence Data}\label{subsec:data-cleaning}
 
