@@ -138,7 +138,36 @@ measurement; genre evolution; PageRank; sensitivity analysis
 % TODO: background; restatement of the 7 tasks from Problem C; roadmap.
 
 \section{Assumptions and Justifications}\label{sec:assumptions}
-% TODO: numbered assumptions A1, A2, ... each with a justification.
+\begin{enumerate}[label=\textbf{A\arabic*.},leftmargin=2.2em]
+  \item \label{assump:weight}
+  \textbf{Edge existence, not strength.} Each record in the influence data
+  states that one artist reported another as an influence; it carries no
+  information about \emph{how strong} that influence was. In Model~I we
+  therefore assign every reported pair a uniform weight \(w_{ij}=1\). Any
+  strength information must be constructed from other evidence; we do so in
+  Model~II, where feature-based quantities are attached to edges.
+  \item \label{assump:decade}
+  \textbf{Active-start decade is an artist attribute.} The field
+  \texttt{active\_start} is recorded at decade granularity and describes when
+  an artist \emph{began} performing. It is not the date at which any
+  particular influence occurred, and influence may act years after the
+  follower's debut. We therefore use decades only for grouping (cohorts,
+  era comparisons) and make no causal timing claims from them.
+  \item \label{assump:reverse}
+  \textbf{Time-order reversals are record noise.} A small fraction of edges
+  (733 of 42{,}770, 1.7\%) connect an influencer whose active-start decade is
+  \emph{later} than the follower's. Because decades are coarse and
+  same-generation artists routinely credit each other, we interpret these as
+  record imprecision or mutual influence rather than impossible relations,
+  and retain them in the primary network; \cref{subsec:q1-robustness}
+  quantifies their effect.
+  \item \label{assump:genre}
+  \textbf{One main genre per artist.} Each artist carries a single
+  \texttt{main\_genre} label (AllMusic macro-genres). The label is coarse ---
+  e.g.\ ``Pop/Rock'' spans many sub-styles --- so all genre-level statements
+  refer to these macro-categories, and we revisit the labelling granularity
+  when interpreting genre-based results.
+\end{enumerate}
 
 \input{sec_notation}
 

@@ -1,0 +1,86 @@
+\section{Data Preprocessing and Exploration}\label{sec:data}
+
+We use only the four official files in \texttt{ProblemC\_Music\_data/};
+no external data are introduced. This section documents the files, the
+cleaning pipeline, and two data-quality audits whose findings shape every
+later model. The influence data require their own cleaning (used by
+Model~I), and the feature data require a different one (used by Model~II);
+we keep the two pipelines explicit and separate.
+
+\subsection{Files and Roles}\label{subsec:data-files}
+
+\begin{itemize}
+  \item \texttt{influence\_data.csv} (42{,}770 rows $\times$ 8 columns):
+        directed influencer$\to$follower edges, with both artists'
+        \texttt{main\_genre} and \texttt{active\_start} (decade). Primary
+        input to Model~I; also serves as the genre dictionary for Model~II.
+  \item \texttt{data\_by\_artist.csv} (5{,}810 artists): artist-level mean
+        Spotify features (primary input to Model~II).
+  \item \texttt{full\_music\_data.csv} ($\approx 98{,}340$ tracks):
+        song-level features with a stringified list of performing-artist
+        identifiers (4{,}410 tracks involve more than one artist; reserved
+        for finer temporal analyses).
+  \item \texttt{data\_by\_year.csv}: yearly mean features from 1921--2020
+        (reserved for evolution plots).
+\end{itemize}
+
+\subsection{Cleaning of the Influence Data}\label{subsec:data-cleaning}
+
+The raw influence file requires four repairs before it can be used.
+(i)~\emph{Identifier hygiene}: trailing whitespace in artist identifiers and
+names is trimmed. (ii)~\emph{Encoding artefacts}: mojibake in some artist
+names is repaired by re-decoding the affected strings. (iii)~\emph{Label
+repair}: genre labels contain an HTML-escape residue (e.g.\ ``R\&B;''
+$\to$ ``R\&B''), which we strip. (iv)~\emph{Type coercion}: active-start
+fields are cast to decade integers. After these repairs we check for
+duplicated directed pairs; none exist, so all 42{,}770 unique directed pairs
+are retained, spanning $N=5{,}603$ artists.
+
+\subsection{Cleaning Choices for Model~II}\label{subsec:data-cleaning-features}
+
+\begin{enumerate}
+  \item Join \texttt{data\_by\_artist} to genre labels via
+        \texttt{artist\_id}, where genres are taken from
+        \texttt{influence\_data} (we do \emph{not} redefine Pop/Rock or
+        other genres; see Assumption~A4).
+  \item Drop artists with missing genre or genre \texttt{Unknown}.
+  \item Select $p=11$ numeric features: danceability, energy, valence,
+        tempo, loudness, acousticness, instrumentalness, liveness,
+        speechiness, duration\_ms, popularity.
+  \item Apply column-wise $z$-score standardization before computing
+        Euclidean distances (see Model~II). We note that
+        \emph{popularity} is not comparable across eras---it rises almost
+        monotonically from 1921 to 2020 in \texttt{data\_by\_year}---so a
+        within-year normalization variant is examined as a robustness check
+        in Model~II.
+\end{enumerate}
+After cleaning we retain $n=5{,}599$ artists with both features and a genre
+label, covering 19 genres (Pop/Rock is the largest class). This similarity
+sample ($5{,}599$ artists) is not identical to the network sample
+($5{,}603$ artists of \cref{subsec:data-cleaning}); the small discrepancy
+arises because having a genre label, having Spotify features, and appearing
+in the influence data are three separate conditions, and any analysis that
+crosses the two samples uses their intersection (stated explicitly where it
+occurs).
+
+\subsection{Data-Quality Audit}\label{subsec:data-audit}
+
+Two structural facts of the influence data shape every later model, so we
+audit them here rather than inside any single model.
+
+\emph{Time-order consistency.} Decade information allows a consistency
+check that the raw data never advertises: in 733 edges (1.7\%) the
+follower's active-start decade precedes the influencer's, and in 8{,}477
+edges the two decades coincide. Per Assumption~A3 the 733 reversals are
+retained in the primary network and their effect is quantified in
+\cref{subsec:q1-robustness}; same-decade edges are kept as same-generation
+mutual influence.
+
+\emph{Skewed connectivity and genre concentration.} The out-degree
+distribution is heavily right-skewed (mean 11.3, median 5, maximum 615 for
+The Beatles), while in-degrees are moderate (median 7, maximum 47): being
+cited is bounded by list length, citing is not. Genre labels concentrate
+sharply---Pop/Rock accounts for 56\% of all edges---and 76.6\% of edges
+connect same-genre artists. These facts motivate the log-scale treatment of
+degree in \cref{subsec:q1-global}, the cohort view of
+\cref{subsec:q1-cohorts}, and the genre-comparison design of Model~III.
