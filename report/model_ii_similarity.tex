@@ -30,7 +30,7 @@ Smaller $d_{ij}$ means greater musical similarity. When a bounded score is usefu
 \paragraph{Why Euclidean distance.}
 After standardization, Euclidean distance has a clear geometric reading (``closer points sound more alike''), is easy to reproduce in code, and maps directly onto the within-versus-between question. We emphasize that this is a \emph{distance}, not a correlation coefficient.
 
-\subsection{Within-Genre versus Between-Genre Test}
+\subsection{Within-Genre versus Between-Genre Test and PCA Robustness}
 
 Let $\mathcal{G}(i)$ denote the main genre of artist $i$. Define the average within-genre and between-genre distances
 \[
@@ -63,8 +63,7 @@ To visualize genre neighbourhoods, we also compute each genre's centroid in the 
   \label{fig:heatmap-baseline}
 \end{figure}
 
-\subsection{Robustness Check: PCA then Euclidean Distance}
-
+\paragraph{Robustness: PCA then Euclidean distance.}
 Audio features are correlated (e.g., energy and loudness), so Euclidean distance in the full standardized space can overweight redundant directions. As a second specification we: (i)~standardize; (ii)~apply PCA retaining enough components to explain at least $80\%$ of variance (here $r=6$, explaining about $82.5\%$); (iii)~recompute Euclidean distances in the score space; (iv)~repeat the within-/between comparison.
 
 Under PCA$\to$Euclidean we again find
@@ -73,12 +72,10 @@ Under PCA$\to$Euclidean we again find
 \quad < \quad
 \bar{d}_{\mathrm{between}} \approx 4.10,
 \]
-so the qualitative conclusion is unchanged.
-
-\subsection{Interim Conclusions for Model II}
-\begin{itemize}
-  \item Musical similarity is operationalized by standardized Euclidean distance on artist-level Spotify features, with PCA$+$Euclidean as a robustness check.
-  \item Genres are taken from the dataset; we do not invent new genre definitions.
-  \item Both specifications satisfy $\bar{d}_{\mathrm{within}}<\bar{d}_{\mathrm{between}}$.
-  \item Similarity is not influence: a small $d_{ij}$ does not imply a declared influence edge (examined later when validating influencers against followers).
-\end{itemize}
+so the qualitative conclusion is unchanged. In sum, musical similarity is
+operationalized by standardized Euclidean distance with the PCA
+re-specification as a robustness check, both specifications satisfy
+$\bar{d}_{\mathrm{within}}<\bar{d}_{\mathrm{between}}$, and genres are
+taken from the dataset rather than redefined. Similarity, however, is not
+influence---a small $d_{ij}$ does not imply a declared influence edge;
+that question is settled by the matched-control test of Model~IV.
