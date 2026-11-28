@@ -1,12 +1,11 @@
 % ============================================================================
-% Paste-ready Model V section for the MAT3300 report (Question 4:
+% Paste-ready Model IV section for the MAT3300 report (Question 4:
 % "Does similarity data support that the identified influencers actually
 % influence the respective artists? Are some characteristics more
 % contagious than others?")
 %
 % Requirements in the main document:
-%   * figures/feature_contagion_excess.pdf   (fig11)
-%   * figures/dose_response_excess.pdf       (fig12)
+%   * figures/dose_response_excess.pdf
 %   * booktabs, amsmath, graphicx, cleveref (already in the preamble)
 % Labels follow the team convention: subsec:q4-*, eq:q4-*, fig:q4-*, tab:q4-*.
 % ============================================================================
@@ -20,8 +19,7 @@ music of their followers, and are some musical characteristics more
 \emph{contagious} than others? Model~II measures how similar two artists
 sound; Model~I records \emph{who claimed to influence whom}. Neither
 alone answers the question, because a high similarity along a reported
-edge may simply reflect \emph{homophily}---followers choose their
-influencers from artists they already sound like. This section therefore
+edge may simply reflect \emph{homophily}. This section therefore
 combines the two models in a matched-control design: the reported edges
 of Model~I are the treatment group, and statistically comparable
 \emph{unrelated} artist pairs form the control group, so that any
@@ -76,7 +74,7 @@ matching on genre and era. We conclude that the similarity data
 Repeating the matched-control comparison coordinate by coordinate
 yields a per-feature excess
 $a_f=\mathbb{E}[\,|\tilde{x}_j^{f}-\tilde{x}_{i}^{f}|\,]\text{ control minus edge}$,
-reported in \cref{tab:q4-features} and \cref{fig:q4-features}.
+reported in \cref{tab:q4-features}.
 The answer to ``are all characteristics equally contagious'' is a clear
 \emph{no}: the gradient spans a factor of six. Style-defining
 characteristics dominate---acousticness, valence, energy and
@@ -94,56 +92,46 @@ values; medians are therefore our headline statistic.
 
 \begin{table}[htbp]
 \centering\small
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrrr}
 \toprule
-feature & excess mean & excess median & $\beta_f$ (edges) & $\beta_f$ (controls) \\
+feature & excess mean & excess median & $\beta_f$ (edges) \\
 \midrule
-acousticness    & 0.172 & \textbf{0.169} & $-0.000$ & $-0.007$ \\
-valence         & 0.165 & \textbf{0.155} & $0.119$  & $-0.004$ \\
-energy          & 0.179 & \textbf{0.154} & $-0.026$ & $-0.002$ \\
-danceability    & 0.173 & \textbf{0.146} & $0.272$  & $0.000$ \\
-tempo           & 0.125 & 0.110          & $-0.054$ & $-0.004$ \\
-loudness        & 0.090 & 0.064          & $-0.000$ & $0.003$ \\
-popularity      & 0.062 & 0.049          & $0.036$  & $-0.003$ \\
-liveness        & 0.071 & 0.047          & $-0.014$ & $-0.001$ \\
-duration\_ms    & 0.069 & 0.044          & $-0.014$ & $0.009$ \\
-speechiness     & 0.085 & 0.034          & $0.023$  & $0.006$ \\
-instrumentalness& 0.121 & 0.027          & $-0.045$ & $0.000$ \\
+acousticness    & 0.172 & \textbf{0.169} & $-0.000$ \\
+valence         & 0.165 & \textbf{0.155} & $0.119$  \\
+energy          & 0.179 & \textbf{0.154} & $-0.026$ \\
+danceability    & 0.173 & \textbf{0.146} & $0.272$  \\
+tempo           & 0.125 & 0.110          & $-0.054$ \\
+loudness        & 0.090 & 0.064          & $-0.000$ \\
+popularity      & 0.062 & 0.049          & $0.036$  \\
+liveness        & 0.071 & 0.047          & $-0.014$ \\
+duration\_ms    & 0.069 & 0.044          & $-0.014$ \\
+speechiness     & 0.085 & 0.034          & $0.023$  \\
+instrumentalness& 0.121 & 0.027          & $-0.045$ \\
 \bottomrule
 \end{tabular}
 \caption{Per-feature contagion. Excess alignment
 $a_f$ (control minus edge absolute difference in $z$-units) and
-directional regression coefficients
+directional regression coefficient
 $x_j^{f}=\beta_f x_i^{f}+\text{genre FE}+\text{decade FE}+\varepsilon$
-fitted separately on reported edges and on pooled matched-control
-pairs. Bold medians mark the four highly contagious characteristics.}
+fitted on reported edges; on pooled matched-control pairs every
+$\beta_f$ vanishes ($|\beta_f|\le 0.009$). Bold medians mark the four
+highly contagious characteristics.}
 \label{tab:q4-features}
 \end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.9\textwidth]{feature_contagion_excess.pdf}
-\caption{Contagion of musical characteristics: median (dark) and mean
-(light) matched-control excess alignment per feature. Style
-characteristics (acousticness, valence, energy, danceability) are
-contagious; structural characteristics (instrumentalness, speechiness,
-duration) are not.}
-\label{fig:q4-features}
-\end{figure}
 
 \paragraph{Directional regression.}
 Magnitude contagion does not imply \emph{directional} tracking. Fitting
 $x_j^{f}=\beta_f x_i^{f}+\text{FE}+\varepsilon$ on the edges
-(\cref{tab:q4-features}, columns 4--5), only \texttt{danceability}
+(\cref{tab:q4-features}, column~4), only \texttt{danceability}
 ($\beta=0.272$ versus $0.000$ on controls) and \texttt{valence}
 ($0.119$) show a clear ``influencer high $\Rightarrow$ follower high''
 pull, while \texttt{energy}---strongly contagious in magnitude---has
 $\beta\approx-0.03$. The divergence between $a_f$ and $\beta_f$ has a
 natural reading: the average follower reports ${\sim}7.6$ influencers,
-so a follower's coordinate is a mixture of many sources and random
-dips; edges then show compressed \emph{distances} without linear
-\emph{tracking}. Magnitude contagion and directional contagion are
-different phenomena, and only danceability and valence pass both tests.
+so a follower's coordinate is a mixture of many sources; edges then show
+compressed \emph{distances} without linear \emph{tracking}. Magnitude
+contagion and directional contagion are different phenomena, and only
+danceability and valence pass both tests.
 
 \subsection{Influence Strength versus Acoustic Trace}\label{subsec:q4-dose}
 
@@ -153,11 +141,9 @@ opposite. Binning edges by the influencer's outgoing Katz score of
 Model~I (\cref{fig:q4-dose}, left), mean excess similarity declines
 monotonically above the median: $0.040$ in the second Katz quintile
 versus $0.028$ in the top quintile (Spearman
-$\rho=-0.032$, $p<10^{-10}$ over edges). Highly influential artists are
-cited \emph{beyond} what their sound predicts---a status component of
-influence---whereas weaker influencers are cited precisely because
-their sound is imitated. This complements Model~I, where edge counts
-already separated reported prestige from network-transmitted influence.
+$\rho=-0.032$, $p<10^{-10}$ over edges). Highly influential artists are cited \emph{beyond} what their sound predicts---a
+status component of influence---whereas weaker influencers are cited
+precisely because their sound is imitated.
 
 \begin{figure}[htbp]
 \centering
