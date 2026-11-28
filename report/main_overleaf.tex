@@ -1,0 +1,213 @@
+%==============================================================================
+% MAT3300 Mathematical Modeling — Final Project Report Template (single file)
+% Problem C: 2021 ICM Problem D — The Influence of Music
+%
+% Structure per Final_Project_Guidelines.pdf and the Problem C statement:
+%   1. One-page Summary Sheet  (team members' full names + student IDs at the
+%      top, as required by the course guidelines)
+%   2. Table of Contents
+%   3. Complete solution (main body)
+%   4. One-page document to the ICM Society  (value of approach, effect of
+%      richer data, further study recommendations — required by Problem C)
+%   5. References
+%   6. Contribution statement  (EXTRA page, NOT counted in the 25-page limit)
+%
+% TOTAL page budget for items 1–5: at most 25 pages.
+%
+% Compile:  pdflatex main.tex  (run TWICE so the ToC and cross-references
+%           resolve), or: latexmk -pdf main.tex
+%==============================================================================
+\documentclass[11pt,letterpaper]{article}
+
+%------------------------------------------------------------------------------
+% Page layout & typography
+%------------------------------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+
+%------------------------------------------------------------------------------
+% Math
+%------------------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{siunitx}
+
+%------------------------------------------------------------------------------
+% Graphics, tables, figures
+%------------------------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{./figures/}}     % put all figure files in ./figures/
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=small,labelfont=bf}
+
+%------------------------------------------------------------------------------
+% Algorithms, code listings, colors
+%------------------------------------------------------------------------------
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Python, basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue!60!black}\bfseries,
+  backgroundcolor=\color{gray!6}, frame=single, breaklines=true,
+  numbers=left, numberstyle=\tiny\color{gray}
+}
+
+%------------------------------------------------------------------------------
+% Diagrams (optional)
+%------------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+%------------------------------------------------------------------------------
+% Lists, cross-references, hyperlinks (hyperref LAST, cleveref after it)
+%------------------------------------------------------------------------------
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref}
+
+\numberwithin{equation}{section}
+
+%------------------------------------------------------------------------------
+% Header / footer
+%------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small MAT3300 Final Project}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%==============================================================================
+% Team information
+%==============================================================================
+\newcommand{\TeamMembers}{%
+  Yu Zihan (123090773)\quad
+  Qian Chenghao (123090452)\quad
+  Li Peixuan (123090276)}
+
+%==============================================================================
+\begin{document}
+%==============================================================================
+
+%------------------------------------------------------------------------------
+% 1. SUMMARY SHEET — one page, must stand on its own; write it LAST.
+%    Cover: problem, approach, key results (with numbers), validation, conclusion.
+%------------------------------------------------------------------------------
+\thispagestyle{empty}
+\begin{center}
+  {\LARGE\bfseries Measuring Musical Influence: A Directed-Network Approach
+   to the Evolution of Music}\\[10pt]
+  {\normalsize \TeamMembers}\\[4pt]
+  {\small MAT3300 Mathematical Modeling --- Final Project, CUHK-Shenzhen}
+\end{center}
+\vspace{0.8em}
+\noindent\rule{\textwidth}{0.6pt}
+\vspace{0.8em}
+\begin{center}
+  {\Large\bfseries Summary}
+\end{center}
+% TODO: summary text (problem -> approach -> key results -> validation -> conclusion)
+\vspace{0.6em}
+\noindent\textbf{Keywords:} directed network; musical influence; similarity
+measurement; genre evolution; PageRank; sensitivity analysis
+\newpage
+
+%------------------------------------------------------------------------------
+% 2. TABLE OF CONTENTS
+%------------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+%------------------------------------------------------------------------------
+% 3. COMPLETE SOLUTION
+%------------------------------------------------------------------------------
+\pagenumbering{arabic}
+
+\section{Introduction and Problem Restatement}\label{sec:intro}
+% TODO: background; restatement of the 7 tasks from Problem C; roadmap.
+
+\section{Assumptions and Justifications}\label{sec:assumptions}
+% TODO: numbered assumptions A1, A2, ... each with a justification.
+
+\input{sec_notation}
+
+\input{sec_data}
+
+
+\input{model1}
+
+
+\input{model_ii_similarity}
+
+\input{model3}
+\input{model3_s74_s75_supplement}
+\input{model4_q4_supplement}
+\input{model5}
+\input{model4_t6}
+
+\section{Validation and Sensitivity Analysis}\label{sec:validation}
+% TODO: validation checks; sensitivity table over key parameters; limitations.
+
+\section{Strengths, Weaknesses and Conclusion}\label{sec:conclusion}
+% TODO: strengths; weaknesses; conclusion per task.
+
+%------------------------------------------------------------------------------
+% 4. ONE-PAGE DOCUMENT TO THE ICM SOCIETY — must fit on ONE page.
+%    Cover: (i) value of our approach; (ii) how richer data would change our
+%    work; (iii) recommendations for further study of music and culture.
+%------------------------------------------------------------------------------
+\newpage
+\section*{A Document to the ICM Society}
+\addcontentsline{toc}{section}{A Document to the ICM Society}
+\label{sec:memo}
+\noindent\begin{tabular}{@{}ll@{}}
+  \textbf{To:}      & The Integrative Collective Music (ICM) Society \\
+  \textbf{From:}    & Team 123090276/123090452/123090773 \\
+  \textbf{Subject:} & The value of network-based measures of musical influence \\
+  \textbf{Date:}    & November 29, 2026 \\
+\end{tabular}
+% TODO: memo body (keep within one page).
+
+%------------------------------------------------------------------------------
+% 5. REFERENCES — cite every external source of data, ideas, figures and code.
+%    Do NOT invent references.
+%------------------------------------------------------------------------------
+\newpage
+\begin{thebibliography}{99}
+\bibitem{allmusic} AllMusic. \emph{Music data scraped from AllMusic.com}, 2021.
+\bibitem{spotify} Spotify. \emph{Spotify Web API audio features}, 2021.
+\bibitem{mauch2015evolution}
+  M.~Mauch, R.~M.~MacCallum, M.~Levy and A.~M.~Leroi.
+  The evolution of popular music: USA 1960--2010.
+  \emph{Royal Society Open Science}, 2(5):150081, 2015.
+\bibitem{savage2019cultural}
+  P.~E.~Savage.
+  Cultural evolution of music.
+  \emph{Humanities and Social Sciences Communications}, 5:16, 2019.
+% ... add your actual sources here.
+\end{thebibliography}
+
+%------------------------------------------------------------------------------
+% 6. CONTRIBUTION STATEMENT — final page, NOT counted in the 25-page limit.
+%------------------------------------------------------------------------------
+\newpage
+\section*{Contribution Statement}
+% TODO: who did what, ordered by ascending student ID; note the code README.
+\begin{itemize}
+  \item \textbf{Li Peixuan (123090276):} ...
+  \item \textbf{Qian Chenghao (123090452):} ...
+  \item \textbf{Yu Zihan (123090773):} ...
+\end{itemize}
+
+\end{document}

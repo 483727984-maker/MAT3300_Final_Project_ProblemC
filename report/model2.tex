@@ -56,16 +56,16 @@ Thus the inequality holds globally. Large heterogeneous labels such as Pop/Rock 
 
 To visualize genre neighbourhoods, we also compute each genre's centroid in the standardized feature space and plot the pairwise Euclidean distances between centroids (Figure~\ref{fig:heatmap-baseline}). The diagonal is zero by construction; brighter cells indicate nearer genres (e.g., Latin--R\&B, Country--Latin), while Comedy/Spoken is far from most musical genres.
 
-\begin{figure}[htbp]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.92\textwidth]{heatmap_genre_distances_baseline.pdf}
-  \caption{Pairwise Euclidean distances between genre centroids in the $z$-score standardized feature space. Smaller values (brighter) indicate more similar average musical profiles. Code: \texttt{code/model\_ii\_heatmap.py}.}
+  \includegraphics[width=0.62\textwidth]{heatmap_genre_distances_baseline.pdf}
+  \caption{Pairwise Euclidean distances between genre centroids in $z$-scored feature space (brighter $=$ more similar).}
   \label{fig:heatmap-baseline}
 \end{figure}
 
 \subsection{Robustness Check: PCA then Euclidean Distance}
 
-Audio features are correlated (e.g., energy and loudness), so Euclidean distance in the full standardized space can overweight redundant directions. As a second specification we: (i)~standardize; (ii)~apply PCA retaining enough components to explain at least $80\%$ of variance (here $r=6$, explaining about $82.5\%$); (iii)~recompute Euclidean distances in the score space; (iv)~repeat the within-/between comparison and the centroid heatmap.
+Audio features are correlated (e.g., energy and loudness), so Euclidean distance in the full standardized space can overweight redundant directions. As a second specification we: (i)~standardize; (ii)~apply PCA retaining enough components to explain at least $80\%$ of variance (here $r=6$, explaining about $82.5\%$); (iii)~recompute Euclidean distances in the score space; (iv)~repeat the within-/between comparison.
 
 Under PCA$\to$Euclidean we again find
 \[
@@ -73,14 +73,7 @@ Under PCA$\to$Euclidean we again find
 \quad < \quad
 \bar{d}_{\mathrm{between}} \approx 4.10,
 \]
-so the qualitative conclusion is unchanged (Figure~\ref{fig:heatmap-pca}).
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.92\textwidth]{heatmap_genre_distances_pca.pdf}
-  \caption{Genre-centroid Euclidean distances after PCA (components explaining $\ge 80\%$ variance). The within-genre proximity pattern remains consistent with the baseline. Code: \texttt{code/model\_ii\_heatmap.py}.}
-  \label{fig:heatmap-pca}
-\end{figure}
+so the qualitative conclusion is unchanged.
 
 \subsection{Interim Conclusions for Model II}
 \begin{itemize}

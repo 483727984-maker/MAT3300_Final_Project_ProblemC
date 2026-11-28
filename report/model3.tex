@@ -35,12 +35,11 @@ after influence weighting. The closest pairs are Blues--R\&B
 the farthest involve Avant-Garde against Comedy/Spoken, Children's and
 Country (\(d>8\)).
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.92\textwidth]{heatmap_genre_distances_katz.pdf}
+\includegraphics[width=0.65\textwidth]{heatmap_genre_distances_katz.pdf}
 \caption{Pairwise Euclidean distances between Katz-weighted genre
-centroids \(\mathbf{c}_g\) in the Model~II \(z\)-scored feature space
-(smaller $=$ more similar).}
+centroids \(\mathbf{c}_g\) (smaller $=$ more similar).}
 \label{fig:q3-genre-dist}
 \end{figure}
 
@@ -52,24 +51,6 @@ meaningful. Instead we read the \emph{same} vectors \(\mathbf{c}_g\). In
 \(z\)-space each coordinate of \(\mathbf{c}_g\) is already a signed
 deviation from the all-artist mean, so a genre is distinguished by its
 \emph{profile}---which coordinates are high or low together.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{genre_profile_heatmap_katz.pdf}
-\caption{Genre profiles \(\mathbf{c}_g\) (rows ordered by
-\(\|\mathbf{c}_g\|_2\)). Red/blue cells are above/below the global artist
-mean on that feature.}
-\label{fig:q3-profiles}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{genre_feature_discriminability.pdf}
-\caption{Across-genre standard deviation of each coordinate of
-\(\mathbf{c}_g\): features that most separate genres globally.}
-\label{fig:q3-disc}
-\end{figure}
-
 The most discriminating coordinates globally are
 \texttt{duration\_ms}, \texttt{speechiness}, \texttt{instrumentalness}
 and \texttt{valence}. Extreme profiles include Avant-Garde (very long
@@ -90,31 +71,13 @@ genre enters decade \(t\) only if at least five such artists are present.
 We treat 1950--2000 as the main window; the 1930s and especially the
 2010s are sparse (only four genres meet the threshold in the 2010s).
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.82\textwidth]{genre_mean_between_distance_over_time.pdf}
-\caption{Mean off-diagonal distance among genre centroids present in each
-active-start decade. Sonic separation among genres tends to increase from
-the 1950s through the 2000s.}
-\label{fig:q3-mean-between-time}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\textwidth]{genre_pair_similarity_over_time.pdf}
+\includegraphics[width=0.65\textwidth]{genre_pair_similarity_over_time.pdf}
 \caption{Similarity \(s=1/(1+d)\) for selected genre pairs over decades.
 Electronic--Pop/Rock becomes more similar; Blues--R\&B and Folk--Country
 trend slightly apart where both are observed.}
 \label{fig:q3-pair-time}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.92\textwidth]{genre_self_drift_over_time.pdf}
-\caption{Self-drift \(\|\mathbf{c}_g(t)-\mathbf{c}_g\|\) relative to the
-static full-sample profile. Large values mark genres whose decade cohorts
-depart most from the overall genre sound.}
-\label{fig:q3-drift}
 \end{figure}
 
 Mean between-genre distance rises from about \(3.16\) (1950s) to about
@@ -122,27 +85,24 @@ Mean between-genre distance rises from about \(3.16\) (1950s) to about
 Pairwise trajectories are heterogeneous---Electronic and Pop/Rock move
 closer (\(\Delta s\approx +0.18\) from the 1970s to the 2000s), while
 Blues--R\&B similarity falls over the decades in which both are observed.
-Self-drift is largest for Comedy/Spoken, International and Classical,
-indicating that their decade-specific weighted profiles move farthest from
-the static \(\mathbf{c}_g\).
+Self-drift \(\|\mathbf{c}_g(t)-\mathbf{c}_g\|\) is largest for
+Comedy/Spoken, International and Classical, indicating that their
+decade-specific weighted profiles move farthest from the static
+\(\mathbf{c}_g\).
 
 \subsection{How Genre Influence Changes over Time}\label{subsec:q3-inf-time}
 
 % ---------------------------------------------------------------------------
-% PLACEHOLDER — teammate (Model I / network side)
-% Fill with: cross-genre edge flows by follower or influencer decade;
-%            genre-level Katz mass or export/import rates over time;
-%            comparison against the similarity trajectories above
-%            (similar ⇏ influential).
-% Suggested figures: genre×decade influence heatmap; top exporters by decade.
+% PLACEHOLDER — teammate (Model I / network side); filled via
+% model3_s74_s75_supplement.tex when that file is \input from main.
 % ---------------------------------------------------------------------------
 \textbf{[Teammate TODO --- genre influence over time.]}
 Using the directed network of Model~I, quantify how \emph{influence}
 among genres evolves by active-start decade (or edge-endpoint decade):
 e.g.\ cross-genre edge counts / share, genre-level outgoing Katz mass, and
 export from one genre into another. Place the resulting time series next
-to \cref{fig:q3-mean-between-time,fig:q3-pair-time} and discuss where
-sonic similarity and reported influence move together or diverge.
+to \cref{fig:q3-pair-time} and discuss where sonic similarity and
+reported influence move together or diverge.
 % End placeholder.
 
 \subsection{Are Some Genres Related to Others?}\label{subsec:q3-related}
