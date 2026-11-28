@@ -1,13 +1,15 @@
 \section{Notation}\label{sec:notation}
 
-\Cref{tab:notation} lists the symbols used throughout the report, grouped into Model~I (network), Model~II (features), Model~III (genre
-flow / relatedness), and Model~V (temporal dynamics).
+\Cref{tab:notation} lists the main recurring symbols, grouped by model;
+symbols used only once are defined where they first appear. One-off
+measures of Model~I (reverse PageRank, the reversed graph) and Model~II
+(PCA rank) are likewise defined in their sections.
 
 \begin{table}[htbp]
 \centering
 \caption{Main notation. Upper block: directed influence network (Model~I).
-Middle: audio features (Model~II). Lower blocks: genre flow (Model~III)
-and temporal dual-channel leaps (Model~V).}
+Middle: audio features and similarity (Models~II/IV). Lower blocks: genre
+flow (Model~III) and temporal dynamics (Model~V).}
 \label{tab:notation}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -15,18 +17,9 @@ and temporal dual-channel leaps (Model~V).}
 \midrule
 $G=(V,E)$ & Directed influence network; $i\to j$ means ``$i$ reported as an influence on $j$'' \\
 $N=|V|$   & Number of artists (nodes) \\
-$A_{ij}$  & Adjacency indicator, $A_{ij}=\mathbf{1}[i\to j\in E]$ \\
-$w_{ij}$  & Edge weight ($w_{ij}=1$ in Model~I) \\
 $d_i^{\text{out}},\; d_i^{\text{in}}$ & Out-/in-degree of node $i$ \\
-$d_j^{\leftarrow,\text{out}}$ & Out-degree of $j$ within the reversed graph $G^{\leftarrow}$ \\
-$G^{\leftarrow}$ & Reversed graph in which every edge is flipped, so a follower endorses its influencer \\
 $K_i$     & Outgoing Katz centrality of artist $i$ \\
 $\alpha$  & Katz attenuation factor \\
-$\rho$    & Spectral radius of the adjacency matrix $A$ \\
-$\mathrm{PR}^{\text{rev}}_i$ & Reverse PageRank of artist $i$ (computed on $G^{\leftarrow}$) \\
-$\delta$  & PageRank damping factor ($\delta=0.85$) \\
-$C_d$     & Cohort of followers whose active-start decade is $d$ \\
-$G_S$     & Genre-induced subnetwork over artists of genre $S$ \\
 \midrule
 \multicolumn{2}{@{}l}{\emph{Audio features (Model~II)}} \\
 \midrule
@@ -34,10 +27,9 @@ $\mathbf{x}_i\in\mathbb{R}^{p}$ & Artist $i$'s Spotify feature vector \\
 $\tilde{\mathbf{x}}_i$ & $z$-score standardized feature vector \\
 $p$ & Number of audio features ($p=11$ in our baseline) \\
 $d_{ij}=\|\tilde{\mathbf{x}}_i-\tilde{\mathbf{x}}_j\|_2$ & Euclidean distance (dissimilarity) \\
+$s(i,j)=1/(1+d_{ij})$ & Bounded similarity; $s^{*}(i,j)$ its matched-control excess (Model~IV) \\
 $\mathcal{G}(i)$ & Main genre label of artist $i$ \\
-$W$, $B$ & Sets of within-genre / between-genre artist pairs \\
-$\bar{d}_{\mathrm{within}}$, $\bar{d}_{\mathrm{between}}$ & Mean distances over $W$ and $B$ \\
-$r$ & Number of retained PCA components \\
+$\bar{d}_{\mathrm{within}}$, $\bar{d}_{\mathrm{between}}$ & Mean within-/between-genre distances \\
 \midrule
 \multicolumn{2}{@{}l}{\emph{Genre flow / relatedness (Model~III)}} \\
 \midrule
