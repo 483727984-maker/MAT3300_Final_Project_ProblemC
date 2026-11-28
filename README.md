@@ -13,7 +13,7 @@ Team workspace for the music-influence modeling project.
 | Q3 “Are some related?” | Placeholder | `report/model3.tex` §`subsec:q3-related` |
 | **Q5** Revolutions (T5) | Done | `code/model_iv_revolutions.py`, `report/model5.tex` |
 | **Q6** One-genre evolution (T6) | Done | `code/q6/`, `report/model4_t6.tex` |
-| Q4, Q7 / memo / summary | Not done | `report/main.tex` TODOs |
+| Q4, Q7 / memo / summary | Not done | `report/main_overleaf.tex` TODOs |
 
 ## Report (LaTeX)
 
@@ -21,7 +21,7 @@ Compile from `report/`:
 
 ```bash
 cd report
-pdflatex main.tex   # run twice for ToC / refs
+pdflatex main_overleaf.tex   # run twice for ToC / refs
 ```
 
 Main inputs: `model1.tex`--`model5.tex`, the Q3/Q4 supplements, and
